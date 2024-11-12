@@ -1,20 +1,23 @@
+import logging
+
 import scrapy
 from scrapy import Selector
 from urllib.parse import urljoin
+from scrapy.http import HtmlResponse
 
 
 class PlayerLinkSpider(scrapy.Spider):
     name = "player_link"
     allowed_domains = ["cpbl.com.tw"]
-    start_urls = ["https://cpbl.com.tw/player"]
+    
+    def start_requests(self):
+        logging.getLogger('scrapy').propagate = False
+        logging.getLogger('protego').propagate = False
+        for i in range(1, 7500):
+            yield scrapy.Request(url=f'https://cpbl.com.tw/team/person?acnt=000000{i:04}')
 
-    def parse(self, response):
-        sel = Selector(response)
-        player_list = []
-        for i in range(4, 10):
-            player_list.append(sel.css(f'#Content > div:nth-child({i}) > dl > dd'))
-        for list in player_list:
-            for player in list:
-                yield {
-                    'player_link': urljoin('https://cpbl.com.tw', player.css('a::attr(href)').extract_first()),
-                }
+    def parse(self, response: HtmlResponse):
+        # some of the links might be 'https://cpbl.com.tw/'
+        # write some program to filter out those links
+        if response.status == 200:
+            return {'player_link': response.url}

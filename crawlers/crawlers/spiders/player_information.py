@@ -29,13 +29,13 @@ class PlayerInformationSpider(scrapy.Spider):
     }
 
     def start_requests(self):
-        with open('../csv_files/player_links.csv', 'r') as file:
+        logging.getLogger('scrapy').propagate = False
+        logging.getLogger('protego').propagate = False
+        with open('../csv_files/player_link.csv', 'r') as file:
             for line in file:
-                print(line.strip())
                 yield Request(url=line.strip())
 
     def parse(self, response: HtmlResponse):
-        logging.getLogger('scrapy').propagate = False
         sel = Selector(response)
         player = PlayerItem()
         player['name'] = sel.css('#Content > div.ContHeader > div > div > dl > dt > div.name::text').extract()[0].lstrip('*◎#')
