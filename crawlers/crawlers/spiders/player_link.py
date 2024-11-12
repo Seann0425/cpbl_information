@@ -1,4 +1,5 @@
 import scrapy
+from scrapy import Selector
 from urllib.parse import urljoin
 
 
@@ -8,7 +9,7 @@ class PlayerLinkSpider(scrapy.Spider):
     start_urls = ["https://cpbl.com.tw/player"]
 
     def parse(self, response):
-        sel = scrapy.Selector(response)
+        sel = Selector(response)
         player_list = []
         for i in range(4, 10):
             player_list.append(sel.css(f'#Content > div:nth-child({i}) > dl > dd'))
