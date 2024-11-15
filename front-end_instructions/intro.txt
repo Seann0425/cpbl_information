@@ -16,3 +16,7 @@ data : 存放.json檔用
 
 目前進度 : 期望能獲得動態資料並輸出 但目前只能靜態產生資料而已（只能顯示出預設好的數據）
 
+註: 可以把專案clone下來後在本機端進行測試（正常來說能成功匯入.json的檔案並且顯示出來 但目前只能在本機端的網頁呈現而已）
+（in vscode terminal)
+step1 : $ npm install -g json-server
+step2 : $ json-server --watch docs/data/(json檔名).json -- port 3000
