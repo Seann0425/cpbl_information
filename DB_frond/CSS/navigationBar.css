@@ -55,24 +55,25 @@
 
 }
 
-.changeData{
-    margin-top: 5px;
-    margin-right: 30px;
-    width:50px;
-    height:50px;
-    background-color:rgba(128, 128, 128, 0.7);
+.changeData {
+    position: absolute; /* 絕對定位 */
+    top: 5px;           /* 距離頁面頂部 5px */
+    right: 30px;        /* 距離頁面右側 30px */
+    margin: 0;          /* 清除 margin */
+    width: 50px;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.7);
     border-radius: 25px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    transition: width 0.15s;
-    transition: height 0.15s;
-    transition: background-color 0.15s;
+    transition: width 0.15s, height 0.15s, background-color 0.15s; /* 合併 transition */
 }
-.changeData:hover{
+
+.changeData:hover {
     width: 52px;
     height: 52px;
-    background-color:rgba(128, 128, 128, 0.9);
+    background-color: rgba(128, 128, 128, 0.9);
     cursor: pointer;
 }

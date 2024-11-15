@@ -12,12 +12,12 @@ fetch('http://localhost:3000/games')
         <p class="date">${new Date(game.game_date).toLocaleDateString()}</p>
         <h1 class="score">${game.home_score}</h1>
         <div class="team">
-          <img class="logo" src="/logo/team_logo_lions_500x500.png">
+          <img class="logo" src="../picture_repository/team_logo_lions_500x500.png">
           <p class="teamName">${game.home_team}</p>
         </div>
         <h1 class="middle"> / </h1>
         <div class="team">
-          <img class="logo" src="/logo/team_logo_lions_500x500.png">
+          <img class="logo" src="../picture_repository/team_logo_lions_500x500.png">
           <p class="teamName">${game.away_team}</p>
         </div>
         <h1 class="score">${game.away_score}</h1>

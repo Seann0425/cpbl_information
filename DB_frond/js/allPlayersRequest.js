@@ -22,7 +22,7 @@ fetch('http://localhost:3000/allPlayers')
 				<h1 class="teamName">${oneTeam.team_name}</h1>
 			</div>
 			<div class="Info">
-				<img class="logo" src="/logo/team_logo_lions_500x500.png">
+				<img class="logo" src="../picture_repository/team_logo_lions_500x500.png">
 			</div>
             `;
 
