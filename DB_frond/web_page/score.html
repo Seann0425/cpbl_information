@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Data</title>
+  <link rel="stylesheet" href="../CSS/showMatch.css">
+	<link rel="stylesheet" href="../CSS/general.css">
+	<link rel="stylesheet" href="../CSS/navigationBar.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
+						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+						rel="stylesheet">
+	<style>
+		.button_down{
+			margin-right: 30px;
+			width: 70px;
+			height: 35px;
+			font-family: "Roboto", "Serial";
+			font-size: 15px;
+			border-color: rgba(0, 0, 0, 0.6);
+			border-width: 2px;
+			border-radius: 5px;
+		}
+		.timeLabel{
+			font-family: "Roboto", "Serial";
+			font-size: 25px;
+			margin-right: 10px;
+		}
+		.timeInput{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		.searchButton{
+			width: 60px;
+			height: 35px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-family: "Roboto", "Serial";
+			font-size: 15px;
+		}
+	</style>
+</head>
+
+<body class="bodyPadding">
+	<div class="navigationBar">
+		<img class="CPBL-logo" src="/logo/logo_new.png">
+		<div class="navigationButtonList">
+			<div class="navigationButtonList">
+				<div class="block">
+					<a class="playerLink" href="allPlayers.html">Player</a>
+					<div class="playerUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="scoreLink" href="score.html">Score</a>
+					<div class="scoreUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="winnerLink" href="winnerList.html">Winlist</a>
+					<div class="winnerUnderLine"></div>
+				</div>
+			</div>
+		</div>
+		<div class="changeData" onclick="window.location.href='Insert.html'">
+			<p class="font-size:30px;">Edit</p>
+		</div>
+	</div>
+
+	<div class="timeInput">
+		<label for="year" class="timeLabel">Year </label>
+		<select id="year" class="button_down"></select>
+
+		<label for="month" class="timeLabel">Month </label>
+		<select id="month" class="button_down"></select>
+
+		<label for="day" class="timeLabel">Day </label>
+		<select id="day" class="button_down"></select>
+
+		<button class="searchButton">search</button>
+	</div>
+	
+
+	
+	<div id="allGames">
+		<div class="game">
+			<p class="date">11/13/2023</p>
+			<h1 class="score">5</h1>
+			<div class="team">
+				<img class="logo" src="/home/tsengtt/Desktop/front_end/DB_frond/team_logo_lions_500x500.png">
+				<p class="teamName">name</p>
+			</div>
+				<h1 class="middle"> / </h1>
+			<div class="team">
+				<img class="logo" src="/home/tsengtt/Desktop/front_end/DB_frond/team_logo_lions_500x500.png">
+				<p class="teamName">name</p>
+			</div>
+			<h1 class="score">7</h1>
+		</div>
+	</div>
+	<script src="downButton.js"></script>
+	<script src="test.js"></script>
+</body>
+</html>

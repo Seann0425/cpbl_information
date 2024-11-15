@@ -1,0 +1,77 @@
+{
+    "games": [
+      {
+        "game_date": "2024-11-13",
+        "home_team": "Team A",
+        "away_team": "Team B",
+        "home_score": 3,
+        "away_score": 2,
+        "game_number": 1,
+        "HP": "Player X",
+        "1B": "Player Y",
+        "2B": "Player Z",
+        "3B": "Player W",
+        "audience": 5000,
+        "time": 120,
+        "mvp_player": "Player X"
+      },
+      {
+        "game_date": "2024-11-14",
+        "home_team": "Team C",
+        "away_team": "Team D",
+        "home_score": 5,
+        "away_score": 6,
+        "game_number": 2,
+        "HP": "Player A",
+        "1B": "Player B",
+        "2B": "Player C",
+        "3B": "Player D",
+        "audience": 4500,
+        "time": 130,
+        "mvp_player": "Player A"
+      }
+    ],
+
+    "allPlayers": [
+      {
+        "team_name": "teamA",
+        "eachName": [
+          "Alice", "Bill", "Caco", "Dora", "Ella", "Frank", "Gina", "Hank", "Ivy", "Jack", "Kira", "Leo", 
+          "Mona", "Nina", "Oscar", "Paul", "Quinn", "Rose", "Steve", "Tina", "Uma", "Vera", "Walt", "Xena", 
+          "Yuri", "Zack"
+        ]
+      },
+      {
+        "team_name": "teamB",
+        "eachName": [
+          "Flora", "Goro", "Hello", "Ivan", "John", "Kelly", "Liam", "Mia", "Noah", "Olivia", "Peter", "Quincy", 
+          "Rachel", "Sam", "Tom", "Ursula", "Victor", "Wendy", "Xander", "Yara", "Zane", "Ava", "Ben", "Chris", 
+          "Daisy", "Eve"
+        ]
+      },
+      {
+        "team_name": "teamC",
+        "eachName": [
+          "Andy", "Bella", "Carlos", "Diana", "Ethan", "Fiona", "George", "Harley", "Irene", "Jonah", "Kara", 
+          "Luke", "Megan", "Nathan", "Owen", "Penny", "Quentin", "Ruby", "Simon", "Tracy", "Ulysses", "Violet", 
+          "Wayne", "Ximena", "Yosef", "Zoe"
+        ]
+      },
+      {
+        "team_name": "teamD",
+        "eachName": [
+          "Aaron", "Brittany", "Clark", "Dana", "Eli", "Faith", "Grant", "Heather", "Isaac", "Julia", "Kyle", 
+          "Laura", "Mason", "Nicole", "Orson", "Paula", "Quin", "Reese", "Sean", "Tess", "Uri", "Vivian", 
+          "Wesley", "Xavier", "Yvette", "Zion"
+        ]
+      },
+      {
+        "team_name": "teamE",
+        "eachName": [
+          "Abby", "Blake", "Colin", "Delia", "Eric", "Faye", "Gabe", "Holly", "Ian", "Jade", "Kevin", "Lily", 
+          "Matt", "Nora", "Otis", "Pam", "Quilla", "Randy", "Scott", "Tara", "Ugo", "Vanessa", "Will", "Xyla", 
+          "Yvonne", "Zeb"
+        ]
+      }
+    ]
+}

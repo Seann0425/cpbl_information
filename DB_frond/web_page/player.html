@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Data</title>
+  	<link rel="stylesheet" href="../CSS/showMatch.css">
+	<link rel="stylesheet" href="../CSS/general.css">
+	<link rel="stylesheet" href="../CSS/navigationBar.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
+						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+						rel="stylesheet">
+	<style>
+		.setFormat{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			margin-top: 40px;
+		}
+		.playerInfoBlock{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			width: 780px;
+			height: 500px;
+			background-color: rgb(218, 218, 218);
+			border: solid 2px black;
+			position: relative;
+
+
+		}
+		.playerName{
+			position:absolute;
+			width: 780px;
+			height: 40px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			top: -30px;
+		}
+		.Name{
+			z-index: 3;
+			font-weight:500;
+			font-size: 60px;
+			background-color: white;
+			padding:10px;
+		}
+		.infoBlock{
+			display: flex;
+			flex-direction:column;
+
+			justify-content: center;
+			align-items: center;
+
+			width: 260px;
+			height: 50px;
+			margin-left:10px;
+			margin-top:55px;
+		}
+		.tag{
+			font-size: 40px;
+			margin-bottom: 10px;
+		}
+		.information{
+			font-size: 25px;
+		}
+
+	</style>
+</head>
+
+<body class="bodyPadding">
+	<div class="setFormat">
+		<div class="playerInfoBlock">
+			<div class="playerName">
+				<h1 class="Name">name</h1>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">背號</h1>
+				<p class="information">123456789</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">投打習慣</h1>
+				<p class="information">right</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">身高</h1>
+				<p class="information">180</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">體重</h1>
+				<p class="information">50kg</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">生日</h1>
+				<p class="information">2024/04/24</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">初登場</h1>
+				<p class="information">2021/11/21</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">國籍</h1>
+				<p class="information">123456789</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">選秀順位</h1>
+				<p class="information">中信兄弟2018年第六輪</p>
+			</div>
+			<div class="infoBlock">
+				<h1 class="tag">位置</h1>
+				<p class="information">三壘手</p>
+			</div>
+			
+		</div>
+	</div>
+	
+
+
+	<div class="navigationBar">
+		<img class="CPBL-logo" src="/logo/logo_new.png">
+		<div class="navigationButtonList">
+			<div class="navigationButtonList">
+				<div class="block">
+					<a class="playerLink" href="allPlayers.html">Player</a>
+					<div class="playerUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="scoreLink" href="score.html">Score</a>
+					<div class="scoreUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="winnerLink" href="winnerList.html">Winlist</a>
+					<div class="winnerUnderLine"></div>
+				</div>
+			</div>
+		</div>
+		<div class="changeData" onclick="window.location.href='Insert.html'">
+			<p class="font-size:30px;">Edit</p>
+		</div>
+	</div>
+	
+    
+</body>
+</html>
