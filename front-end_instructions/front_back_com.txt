@@ -1,0 +1,31 @@
+（gpt4o生成 僅供參考）
+
+GitHub Pages (網址為.github.io)的為本質上是一個靜態網站托管服務，無法直接與資料庫進行溝通或操作伺服器端的邏輯。它的主要功能是托管 HTML、CSS、JavaScript 等靜態文件，並通過靜態內容渲染網頁。
+靜態網站與資料庫溝通的限制
+
+    （1）無伺服器端運算： GitHub Pages 是靜態的，沒有伺服器端語言（如 PHP、Node.js、Python）支持，因此無法直接與資料庫（如 MySQL、PostgreSQL）進行交互。
+
+     (2) 無法直接使用後端 API： 即使資料庫通過 REST API 或 GraphQL 暴露，GitHub Pages 也無法執行認證、處理請求等伺服器端邏輯。
+
+如何實現資料庫數據與 GitHub Pages 的互動
+
+儘管 GitHub Pages 無法直接與資料庫交互，您可以通過以下方法間接實現數據的顯示和更新：
+方法 1：使用公開的 API 提供資料
+
+如果您的資料庫可以通過後端伺服器暴露為一個 RESTful API 或 GraphQL API，GitHub Pages 可以通過 JavaScript 與該 API 通信，從而獲取數據並顯示在網頁上。
+
+實現步驟：
+
+    建立後端伺服器（不在 GitHub Pages 上運行）：
+        使用 Node.js、Django、Flask 等框架連接您的資料庫，並提供 API。
+        部署到 Heroku、Render、AWS 等雲服務。
+
+    GitHub Pages 前端請求 API：
+        在 GitHub Pages 上使用 JavaScript 的 fetch API 或 AJAX 向您的後端發送請求。
+        將返回的數據渲染到網頁中。
+
+    四個方法
+    (1)公開 API：將資料庫連接到後端伺服器，GitHub Pages 通過 fetch 請求 API。
+    (2)靜態 JSON 文件：將資料庫數據定期匯出為 JSON，GitHub Pages 直接加載。
+    (3)無伺服器架構：使用 Serverless 平台（如 AWS Lambda）處理資料庫邏輯。
+    (4)Firebase 整合：使用 Firebase 即時數據庫，實現前後端協作。
