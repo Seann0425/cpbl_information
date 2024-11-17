@@ -51,9 +51,9 @@ searchYearButton.forEach(button => {
                     <h1 class="winnerName">${RBI_player}</h1>
                 </div>
                 <div class="right_block">
-                    <h1 class="winnerName">名子</h1>
+                    <h1 class="winnerName">${most_stolen_bases_player}</h1>
                     <p class="rightWords">一個棒球球季中成功盜壘次數最多的球員。盜壘（Stolen Base, SB）是指跑者在對方投手投球時，利用時機從一個壘包快速跑向下一個壘包而不被防守隊員觸殺出局。盜壘王通常具備優秀的速度、判斷能力以及在比賽中抓住時機的技巧。</p>
-                    <h1 class="winnerTag">${most_stolen_bases_player}</h1>
+                    <h1 class="winnerTag">盜壘王</h1>
                 </div>
                 <div class="left_block">
                     <h1 class="winnerTag">全壘打王</h1>
@@ -61,9 +61,9 @@ searchYearButton.forEach(button => {
                     <h1 class="winnerName">${homerun_leader_player}</h1>
                 </div>
                 <div class="right_block">
-                    <h1 class="winnerName">名子</h1>
+                    <h1 class="winnerName">${most_wins_player}</h1>
                     <p class="rightWords">獲得最多勝投的投手。勝投（Win, W）是指投手在比賽中投球表現優異，並且幫助自己的隊伍最終獲勝。為了計算勝投，投手必須在比賽中投出規定的局數並保持領先，直到比賽結束，並且在比賽中通常不會被對方逆轉。</p>
-                    <h1 class="winnerTag">${most_wins_player}</h1>
+                    <h1 class="winnerTag">勝投手</h1>
                 </div>
                 <div class="left_block">
                     <h1 class="winnerTag">奪三振王</h1>
@@ -71,9 +71,9 @@ searchYearButton.forEach(button => {
                     <h1 class="winnerName">${strikeout_leader_player}</h1>
                 </div>
                 <div class="right_block">
-                    <h1 class="winnerName">名子</h1>
+                    <h1 class="winnerName">${lowest_ERA_player}</h1>
                     <p class="rightWords">防禦率是衡量投手表現的重要指標，計算方式是每九局所允許的自責分（earned runs）數量。防禦率越低，表示投手越能有效限制對手得分，維持穩定的投球表現。</p>
-                    <h1 class="winnerTag">${lowest_ERA_player}</h1>
+                    <h1 class="winnerTag">防禦王</h1>
                 </div>
                 <div class="left_block">
                     <h1 class="winnerTag">最佳救援投手</h1>

@@ -7,7 +7,6 @@ fetch(`http://localhost:3000/players?player_unique_id=${id}`)
 		console.log(data);
 		const toAdd = document.getElementById('format');
 		toAdd.innerHTML =`
-			<h1>Name</h1>
 			<div class="infoFormat">
 				<div class="positionLeft">
 					<div class="labelColumn">
