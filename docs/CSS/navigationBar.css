@@ -44,6 +44,9 @@
 .winnerLink:hover + .winnerUnderLine{
     width: 70px;
 }
+.predictLink:hover + .predictUnderLine{
+    width: 70px;
+}
 .block a{
     text-decoration: none;
     font-size: 23px;

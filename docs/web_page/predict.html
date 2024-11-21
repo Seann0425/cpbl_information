@@ -36,26 +36,29 @@
     </div>
   </div>
 
-  <div id="allTeams">
-    <div class="predict">
-      <h2>Predict</h2>
-      <p class="highlight" id="venue">Venue information will be shown here</p>
-    </div>
-
-    <div class="team-container">
-      <div class="team" id="team1">Team 1 Information</div>
-      <div class="team" id="team2">Team 2 Information</div>
-    </div>
-
-    <div class="details">
-      <h3>Game Details</h3>
-      <table id="gameDetailsTable">
-        <tr>
-          <th>Detail</th>
-          <th>Value</th>
-        </tr>
-      </table>
-    </div>
+  <div class="user-input">
+    <h3>Enter Your Details</h3>
+    <label for="pitcherName">pitcher Name:</label>
+    <input type="text" id="pitcherName" placeholder="Enter your pitcher name">
+    <br>
+    <label for="hitterName">hitter Name:</label>
+    <input type="text" id="hitterName" placeholder="Enter your hitter name">
+    <br>
+    <button onclick="showName()">Submit</button>
+    <p id="displayName"></p>
   </div>
+
+  <script>
+    function showName() {
+      // 獲取輸入框的值
+      const pitcherName = document.getElementById("pitcherName").value;
+      const hitterName = document.getElementById("hitterName").value;
+
+      // 顯示輸入的姓名
+      const displayName = document.getElementById("displayName");
+      displayName.textContent = `Hello, ${pitcherName} ${hitterName}!`;
+    }
+  </script>
+  
 </body>
 </html>
