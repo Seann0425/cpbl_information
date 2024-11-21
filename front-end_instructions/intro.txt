@@ -1,0 +1,22 @@
+2024/11/15
+
+把前端東西全部丟進docs裡
+HTML、CSS、JavaScript(.js)
+
+目前的架構為
+index.html(首頁) -> player 
+           -> winnerList
+           -> score -> gameDetail
+
+web_page(.html) : 存放所有的網頁程式碼
+CSS : 排版相關設定
+js : 功能操作 （目前設定的功能為 得到.json檔後 從裡面獲取資料 並匯入到網頁裡 ）
+picture_respository : 存放logo, 球隊照片等
+data : 存放.json檔用
+
+目前進度 : 期望能獲得動態資料並輸出 但目前只能靜態產生資料而已（只能顯示出預設好的數據）
+
+註: 可以把專案clone下來後在本機端進行測試（正常來說能成功匯入.json的檔案並且顯示出來 但目前只能在本機端的網頁呈現而已）
+（in vscode terminal)
+step1 : $ npm install -g json-server
+step2 : $ json-server --watch docs/data/(json檔名).json -- port 3000

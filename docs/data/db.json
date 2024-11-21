@@ -1,0 +1,612 @@
+{
+  "games": [
+    {
+      "game_date": "2024-11-13",
+      "home_team": "Team A",
+      "away_team": "Team B",
+      "home_score": 3,
+      "away_score": 2,
+      "game_number": 1,
+      "HP": "Player X",
+      "1B": "Player Y",
+      "2B": "Player Z",
+      "3B": "Player W",
+      "audience": 5000,
+      "time": 120,
+      "mvp_player": "Player X"
+    },
+    {
+      "game_date": "2024-11-14",
+      "home_team": "Team C",
+      "away_team": "Team D",
+      "home_score": 5,
+      "away_score": 6,
+      "game_number": 2,
+      "HP": "Player A",
+      "1B": "Player B",
+      "2B": "Player C",
+      "3B": "Player D",
+      "audience": 4500,
+      "time": 130,
+      "mvp_player": "Player A"
+    }
+  ],
+
+  "allPlayers": [
+    {
+      "team_name": "teamA",
+      "eachName": [
+        "Alice", "Bill", "Caco", "Dora", "Ella", "Frank", "Gina", "Hank", "Ivy", "Jack", "Kira", "Leo", 
+        "Mona", "Nina", "Oscar", "Paul", "Quinn", "Rose", "Steve", "Tina", "Uma", "Vera", "Walt", "Xena", 
+        "Yuri", "Zack"
+      ]
+    },
+    {
+      "team_name": "teamB",
+      "eachName": [
+        "Flora", "Goro", "Hello", "Ivan", "John", "Kelly", "Liam", "Mia", "Noah", "Olivia", "Peter", "Quincy", 
+        "Rachel", "Sam", "Tom", "Ursula", "Victor", "Wendy", "Xander", "Yara", "Zane", "Ava", "Ben", "Chris", 
+        "Daisy", "Eve"
+      ]
+    },
+    {
+      "team_name": "teamC",
+      "eachName": [
+        "Andy", "Bella", "Carlos", "Diana", "Ethan", "Fiona", "George", "Harley", "Irene", "Jonah", "Kara", 
+        "Luke", "Megan", "Nathan", "Owen", "Penny", "Quentin", "Ruby", "Simon", "Tracy", "Ulysses", "Violet", 
+        "Wayne", "Ximena", "Yosef", "Zoe"
+      ]
+    },
+    {
+      "team_name": "teamD",
+      "eachName": [
+        "Aaron", "Brittany", "Clark", "Dana", "Eli", "Faith", "Grant", "Heather", "Isaac", "Julia", "Kyle", 
+        "Laura", "Mason", "Nicole", "Orson", "Paula", "Quin", "Reese", "Sean", "Tess", "Uri", "Vivian", 
+        "Wesley", "Xavier", "Yvette", "Zion"
+      ]
+    },
+    {
+      "team_name": "teamE",
+      "eachName": [
+        "Abby", "Blake", "Colin", "Delia", "Eric", "Faye", "Gabe", "Holly", "Ian", "Jade", "Kevin", "Lily", 
+        "Matt", "Nora", "Otis", "Pam", "Quilla", "Randy", "Scott", "Tara", "Ugo", "Vanessa", "Will", "Xyla", 
+        "Yvonne", "Zeb"
+      ]
+    }
+  ],
+
+    "winnerlist": [
+      {
+        "years": 2024,
+        "most_hits_player_id": 1,
+        "highest_batting_average_player_id": 2,
+        "most_RBI_player_id": 3,
+        "most_stolen_bases_player_id": 4,
+        "homerun_leader_player_id": 5,
+        "most_wins_player_id": 6,
+        "strikeout_leader_player_id": 7,
+        "lowest_ERA_player_id": 8,
+        "most_saves_player_id": 9,
+        "most_holds_player_id": 10
+      },
+      {
+        "years": 2023,
+        "most_hits_player_id": 11,
+        "highest_batting_average_player_id": 12,
+        "most_RBI_player_id": 13,
+        "most_stolen_bases_player_id": 14,
+        "homerun_leader_player_id": 15,
+        "most_wins_player_id": 16,
+        "strikeout_leader_player_id": 17,
+        "lowest_ERA_player_id": 18,
+        "most_saves_player_id": 19,
+        "most_holds_player_id": 20
+      },
+      {
+        "years": 2022,
+        "most_hits_player_id": 21,
+        "highest_batting_average_player_id": 22,
+        "most_RBI_player_id": 23,
+        "most_stolen_bases_player_id": 24,
+        "homerun_leader_player_id": 25,
+        "most_wins_player_id": 26,
+        "strikeout_leader_player_id": 27,
+        "lowest_ERA_player_id": 28,
+        "most_saves_player_id": 29,
+        "most_holds_player_id": 30
+      },
+      {
+        "years": 2021,
+        "most_hits_player_id": 1,
+        "highest_batting_average_player_id": 2,
+        "most_RBI_player_id": 3,
+        "most_stolen_bases_player_id": 4,
+        "homerun_leader_player_id": 5,
+        "most_wins_player_id": 6,
+        "strikeout_leader_player_id": 7,
+        "lowest_ERA_player_id": 8,
+        "most_saves_player_id": 9,
+        "most_holds_player_id": 10
+      },
+      {
+        "years": 2020,
+        "most_hits_player_id": 11,
+        "highest_batting_average_player_id": 12,
+        "most_RBI_player_id": 13,
+        "most_stolen_bases_player_id": 14,
+        "homerun_leader_player_id": 15,
+        "most_wins_player_id": 16,
+        "strikeout_leader_player_id": 17,
+        "lowest_ERA_player_id": 18,
+        "most_saves_player_id": 19,
+        "most_holds_player_id": 20
+      },
+      {
+        "years": 2019,
+        "most_hits_player_id": 21,
+        "highest_batting_average_player_id": 22,
+        "most_RBI_player_id": 23,
+        "most_stolen_bases_player_id": 24,
+        "homerun_leader_player_id": 25,
+        "most_wins_player_id": 26,
+        "strikeout_leader_player_id": 27,
+        "lowest_ERA_player_id": 28,
+        "most_saves_player_id": 29,
+        "most_holds_player_id": 30
+      },
+      {
+        "years": 2018,
+        "most_hits_player_id": 1,
+        "highest_batting_average_player_id": 2,
+        "most_RBI_player_id": 3,
+        "most_stolen_bases_player_id": 4,
+        "homerun_leader_player_id": 5,
+        "most_wins_player_id": 6,
+        "strikeout_leader_player_id": 7,
+        "lowest_ERA_player_id": 8,
+        "most_saves_player_id": 9,
+        "most_holds_player_id": 10
+      },
+      {
+        "years": 2017,
+        "most_hits_player_id": 11,
+        "highest_batting_average_player_id": 12,
+        "most_RBI_player_id": 13,
+        "most_stolen_bases_player_id": 14,
+        "homerun_leader_player_id": 15,
+        "most_wins_player_id": 16,
+        "strikeout_leader_player_id": 17,
+        "lowest_ERA_player_id": 18,
+        "most_saves_player_id": 19,
+        "most_holds_player_id": 20
+      },
+      {
+        "years": 2016,
+        "most_hits_player_id": 21,
+        "highest_batting_average_player_id": 22,
+        "most_RBI_player_id": 23,
+        "most_stolen_bases_player_id": 24,
+        "homerun_leader_player_id": 25,
+        "most_wins_player_id": 26,
+        "strikeout_leader_player_id": 27,
+        "lowest_ERA_player_id": 28,
+        "most_saves_player_id": 29,
+        "most_holds_player_id": 30
+      },
+      {
+        "years": 2015,
+        "most_hits_player_id": 1,
+        "highest_batting_average_player_id": 2,
+        "most_RBI_player_id": 3,
+        "most_stolen_bases_player_id": 4,
+        "homerun_leader_player_id": 5,
+        "most_wins_player_id": 6,
+        "strikeout_leader_player_id": 7,
+        "lowest_ERA_player_id": 8,
+        "most_saves_player_id": 9,
+        "most_holds_player_id": 10
+      },
+      {
+        "years": 2014,
+        "most_hits_player_id": 11,
+        "highest_batting_average_player_id": 12,
+        "most_RBI_player_id": 13,
+        "most_stolen_bases_player_id": 14,
+        "homerun_leader_player_id": 15,
+        "most_wins_player_id": 16,
+        "strikeout_leader_player_id": 17,
+        "lowest_ERA_player_id": 18,
+        "most_saves_player_id": 19,
+        "most_holds_player_id": 20
+      },
+      {
+        "years": 2013,
+        "most_hits_player_id": 21,
+        "highest_batting_average_player_id": 22,
+        "most_RBI_player_id": 23,
+        "most_stolen_bases_player_id": 24,
+        "homerun_leader_player_id": 25,
+        "most_wins_player_id": 26,
+        "strikeout_leader_player_id": 27,
+        "lowest_ERA_player_id": 28,
+        "most_saves_player_id": 29,
+        "most_holds_player_id": 30
+      },
+      {
+        "years": 2012,
+        "most_hits_player_id": 1,
+        "highest_batting_average_player_id": 2,
+        "most_RBI_player_id": 3,
+        "most_stolen_bases_player_id": 4,
+        "homerun_leader_player_id": 5,
+        "most_wins_player_id": 6,
+        "strikeout_leader_player_id": 7,
+        "lowest_ERA_player_id": 8,
+        "most_saves_player_id": 9,
+        "most_holds_player_id": 10
+      }
+  ],
+  "players" : [
+    {
+        "player_name": "Player 1",
+        "player_unique_id": 1,
+        "t_b": "L/L",
+        "height": 176,
+        "weight": 71,
+        "born": "1991-02-02",
+        "debut": "2011-02-02",
+        "nationality": "Canada",
+        "draft_order": "2nd round",
+        "position": "Catcher"
+    },
+    {
+        "player_name": "Player 2",
+        "player_unique_id": 2,
+        "t_b": "R/L",
+        "height": 177,
+        "weight": 72,
+        "born": "1992-03-03",
+        "debut": "2012-03-03",
+        "nationality": "Japan",
+        "draft_order": "3rd round",
+        "position": "First Baseman"
+    },
+    {
+        "player_name": "Player 3",
+        "player_unique_id": 3,
+        "t_b": "L/R",
+        "height": 178,
+        "weight": 73,
+        "born": "1993-04-04",
+        "debut": "2013-04-04",
+        "nationality": "Dominican Republic",
+        "draft_order": "1st round",
+        "position": "Second Baseman"
+    },
+    {
+        "player_name": "Player 4",
+        "player_unique_id": 4,
+        "t_b": "R/R",
+        "height": 179,
+        "weight": 74,
+        "born": "1994-05-05",
+        "debut": "2014-05-05",
+        "nationality": "Mexico",
+        "draft_order": "2nd round",
+        "position": "Third Baseman"
+    },
+    {
+        "player_name": "Player 5",
+        "player_unique_id": 5,
+        "t_b": "L/L",
+        "height": 180,
+        "weight": 75,
+        "born": "1995-06-06",
+        "debut": "2015-06-06",
+        "nationality": "South Korea",
+        "draft_order": "3rd round",
+        "position": "Shortstop"
+    },
+    {
+        "player_name": "Player 6",
+        "player_unique_id": 6,
+        "t_b": "R/L",
+        "height": 181,
+        "weight": 76,
+        "born": "1996-07-07",
+        "debut": "2016-07-07",
+        "nationality": "USA",
+        "draft_order": "1st round",
+        "position": "Outfielder"
+    },
+    {
+        "player_name": "Player 7",
+        "player_unique_id": 7,
+        "t_b": "L/R",
+        "height": 182,
+        "weight": 77,
+        "born": "1997-08-08",
+        "debut": "2017-08-08",
+        "nationality": "Canada",
+        "draft_order": "2nd round",
+        "position": "Pitcher"
+    },
+    {
+        "player_name": "Player 8",
+        "player_unique_id": 8,
+        "t_b": "R/R",
+        "height": 183,
+        "weight": 78,
+        "born": "1998-09-09",
+        "debut": "2018-09-09",
+        "nationality": "Japan",
+        "draft_order": "3rd round",
+        "position": "Catcher"
+    },
+    {
+        "player_name": "Player 9",
+        "player_unique_id": 9,
+        "t_b": "L/L",
+        "height": 184,
+        "weight": 79,
+        "born": "1999-10-10",
+        "debut": "2019-10-10",
+        "nationality": "Dominican Republic",
+        "draft_order": "1st round",
+        "position": "First Baseman"
+    },
+    {
+        "player_name": "Player 10",
+        "player_unique_id": 10,
+        "t_b": "R/L",
+        "height": 185,
+        "weight": 80,
+        "born": "1990-11-11",
+        "debut": "2010-11-11",
+        "nationality": "Mexico",
+        "draft_order": "2nd round",
+        "position": "Second Baseman"
+    },
+    {
+        "player_name": "Player 11",
+        "player_unique_id": 11,
+        "t_b": "L/R",
+        "height": 186,
+        "weight": 81,
+        "born": "1991-12-12",
+        "debut": "2011-12-12",
+        "nationality": "South Korea",
+        "draft_order": "3rd round",
+        "position": "Third Baseman"
+    },
+    {
+        "player_name": "Player 12",
+        "player_unique_id": 12,
+        "t_b": "R/R",
+        "height": 187,
+        "weight": 82,
+        "born": "1992-01-13",
+        "debut": "2012-01-13",
+        "nationality": "USA",
+        "draft_order": "1st round",
+        "position": "Shortstop"
+    },
+    {
+        "player_name": "Player 13",
+        "player_unique_id": 13,
+        "t_b": "L/L",
+        "height": 188,
+        "weight": 83,
+        "born": "1993-02-14",
+        "debut": "2013-02-14",
+        "nationality": "Canada",
+        "draft_order": "2nd round",
+        "position": "Outfielder"
+    },
+    {
+        "player_name": "Player 14",
+        "player_unique_id": 14,
+        "t_b": "R/L",
+        "height": 189,
+        "weight": 84,
+        "born": "1994-03-15",
+        "debut": "2014-03-15",
+        "nationality": "Japan",
+        "draft_order": "3rd round",
+        "position": "Pitcher"
+    },
+    {
+        "player_name": "Player 15",
+        "player_unique_id": 15,
+        "t_b": "L/R",
+        "height": 190,
+        "weight": 85,
+        "born": "1995-04-16",
+        "debut": "2015-04-16",
+        "nationality": "Dominican Republic",
+        "draft_order": "1st round",
+        "position": "Catcher"
+    },
+    {
+        "player_name": "Player 16",
+        "player_unique_id": 16,
+        "t_b": "R/R",
+        "height": 191,
+        "weight": 86,
+        "born": "1996-05-17",
+        "debut": "2016-05-17",
+        "nationality": "Mexico",
+        "draft_order": "2nd round",
+        "position": "First Baseman"
+    },
+    {
+        "player_name": "Player 17",
+        "player_unique_id": 17,
+        "t_b": "L/L",
+        "height": 192,
+        "weight": 87,
+        "born": "1997-06-18",
+        "debut": "2017-06-18",
+        "nationality": "South Korea",
+        "draft_order": "3rd round",
+        "position": "Second Baseman"
+    },
+    {
+        "player_name": "Player 18",
+        "player_unique_id": 18,
+        "t_b": "R/L",
+        "height": 193,
+        "weight": 88,
+        "born": "1998-07-19",
+        "debut": "2018-07-19",
+        "nationality": "USA",
+        "draft_order": "1st round",
+        "position": "Third Baseman"
+    },
+    {
+        "player_name": "Player 19",
+        "player_unique_id": 19,
+        "t_b": "L/R",
+        "height": 194,
+        "weight": 89,
+        "born": "1999-08-20",
+        "debut": "2019-08-20",
+        "nationality": "Canada",
+        "draft_order": "2nd round",
+        "position": "Shortstop"
+    },
+    {
+        "player_name": "Player 20",
+        "player_unique_id": 20,
+        "t_b": "R/R",
+        "height": 175,
+        "weight": 90,
+        "born": "1990-09-21",
+        "debut": "2010-09-21",
+        "nationality": "Japan",
+        "draft_order": "3rd round",
+        "position": "Outfielder"
+    },
+    {
+        "player_name": "Player 21",
+        "player_unique_id": 21,
+        "t_b": "L/L",
+        "height": 176,
+        "weight": 91,
+        "born": "1991-10-22",
+        "debut": "2011-10-22",
+        "nationality": "Dominican Republic",
+        "draft_order": "1st round",
+        "position": "Pitcher"
+    },
+    {
+        "player_name": "Player 22",
+        "player_unique_id": 22,
+        "t_b": "R/L",
+        "height": 177,
+        "weight": 92,
+        "born": "1992-11-23",
+        "debut": "2012-11-23",
+        "nationality": "Mexico",
+        "draft_order": "2nd round",
+        "position": "Catcher"
+    },
+    {
+        "player_name": "Player 23",
+        "player_unique_id": 23,
+        "t_b": "L/R",
+        "height": 178,
+        "weight": 93,
+        "born": "1993-12-24",
+        "debut": "2013-12-24",
+        "nationality": "South Korea",
+        "draft_order": "3rd round",
+        "position": "First Baseman"
+    },
+    {
+        "player_name": "Player 24",
+        "player_unique_id": 24,
+        "t_b": "R/R",
+        "height": 179,
+        "weight": 94,
+        "born": "1994-01-25",
+        "debut": "2014-01-25",
+        "nationality": "USA",
+        "draft_order": "1st round",
+        "position": "Second Baseman"
+    },
+    {
+        "player_name": "Player 25",
+        "player_unique_id": 25,
+        "t_b": "L/L",
+        "height": 180,
+        "weight": 95,
+        "born": "1995-02-26",
+        "debut": "2015-02-26",
+        "nationality": "Canada",
+        "draft_order": "2nd round",
+        "position": "Third Baseman"
+    },
+    {
+        "player_name": "Player 26",
+        "player_unique_id": 26,
+        "t_b": "R/L",
+        "height": 181,
+        "weight": 96,
+        "born": "1996-03-27",
+        "debut": "2016-03-27",
+        "nationality": "Japan",
+        "draft_order": "3rd round",
+        "position": "Shortstop"
+    },
+    {
+        "player_name": "Player 27",
+        "player_unique_id": 27,
+        "t_b": "L/R",
+        "height": 182,
+        "weight": 97,
+        "born": "1997-04-28",
+        "debut": "2017-04-28",
+        "nationality": "Dominican Republic",
+        "draft_order": "1st round",
+        "position": "Outfielder"
+    },
+    {
+        "player_name": "Player 28",
+        "player_unique_id": 28,
+        "t_b": "R/R",
+        "height": 183,
+        "weight": 98,
+        "born": "1998-05-01",
+        "debut": "2018-05-01",
+        "nationality": "Mexico",
+        "draft_order": "2nd round",
+        "position": "Pitcher"
+    },
+    {
+        "player_name": "Player 29",
+        "player_unique_id": 29,
+        "t_b": "L/L",
+        "height": 184,
+        "weight": 99,
+        "born": "1999-06-02",
+        "debut": "2019-06-02",
+        "nationality": "South Korea",
+        "draft_order": "3rd round",
+        "position": "Catcher"
+    },
+    {
+        "player_name": "Player 30",
+        "player_unique_id": 30,
+        "t_b": "R/L",
+        "height": 185,
+        "weight": 70,
+        "born": "1990-07-03",
+        "debut": "2010-07-03",
+        "nationality": "USA",
+        "draft_order": "1st round",
+        "position": "First Baseman"
+    }
+]
+  
+}
