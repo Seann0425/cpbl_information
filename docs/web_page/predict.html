@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Predict game outcomes and view detailed statistics.">
+  <link rel="stylesheet" href="../CSS/predict.css">
+  <title>Predict</title>
+</head>
+
+<body>
+  <div class="navigationBar">
+    <a href="../index.html">
+      <img class="CPBL-logo" src="../picture_repository/logo_new.png" alt="CPBL Logo">
+    </a>
+    <div class="navigationButtonList">
+      <div class="block">
+        <a class="playerLink" href="allPlayers.html">Player</a>
+        <div class="playerUnderLine"></div>
+      </div>
+      <div class="block">
+        <a class="scoreLink" href="score.html">Score</a>
+        <div class="scoreUnderLine"></div>
+      </div>
+      <div class="block">
+        <a class="winnerLink" href="winnerList.html">Winlist</a>
+        <div class="winnerUnderLine"></div>
+      </div>
+      <div class="block">
+        <a class="predictlink" href="predict.html">Predict</a>
+        <div class="predictUnderLine"></div>
+      </div>
+    </div>
+    <div class="changeData" onclick="window.location.href='Insert.html'">
+      <p style="font-size: 18px;">Edit</p>
+    </div>
+  </div>
+
+  <div id="allTeams">
+    <div class="predict">
+      <h2>Predict</h2>
+      <p class="highlight" id="venue">Venue information will be shown here</p>
+    </div>
+
+    <div class="team-container">
+      <div class="team" id="team1">Team 1 Information</div>
+      <div class="team" id="team2">Team 2 Information</div>
+    </div>
+
+    <div class="details">
+      <h3>Game Details</h3>
+      <table id="gameDetailsTable">
+        <tr>
+          <th>Detail</th>
+          <th>Value</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

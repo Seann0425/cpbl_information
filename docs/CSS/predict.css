@@ -1,0 +1,72 @@
+.CPBL-logo{
+    height:60px;
+}
+
+.navigationBar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: white;
+    z-index: 10;
+}
+
+.navigationButtonList {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    padding: 10px;
+}
+
+.block a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+.navigationButtonList a:hover{
+    position:absolute;
+}
+
+.changeData{
+    margin-top: 5px;
+    margin-right: 30px;
+    width:50px;
+    height:50px;
+    background-color:rgba(128, 128, 128, 0.7);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.15s;
+    transition: height 0.15s;
+    transition: background-color 0.15s;
+    font-size: 14px;
+}
+
+.changeData:hover{
+    width: 52px;
+    height: 52px;
+    background-color:rgba(128, 128, 128, 0.9);
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding-top: 60px;
+}
+

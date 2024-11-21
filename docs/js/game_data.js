@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 定義 Endpoints
-  const scoreboardEndpoint = "http://localhost:3000/scoreboard";
-  const teamsEndpoint = "http://localhost:3000/teams";
-  const detailsEndpoint = "http://localhost:3000/details";
+  const scoreboardEndpoint = "http://localhost:3001/scoreboard";
+  const teamsEndpoint = "http://localhost:3001/teams";
+  const detailsEndpoint = "http://localhost:3001/details";
 
   // 同步獲取多個 Endpoint 的數據
   Promise.all([
