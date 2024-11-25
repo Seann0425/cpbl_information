@@ -1,0 +1,89 @@
+/* styles.css */
+
+/* 基本設置 */
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  } 
+  
+  /* 側邊功能欄 */
+  .sidebar {
+    width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    position: fixed;
+  }
+  
+  .sidebar.collapsed {
+    width: 60px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none; /* 去掉超連結的下劃線 */
+  }
+  
+  .sidebar ul li a:hover {
+    color: #00bfff; /* 滑鼠移過時變為淺藍色 */
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #575757;
+  }
+  
+  /* 功能欄項目縮寫 */
+  .sidebar.collapsed ul li span {
+    display: none;
+  }
+  
+  .sidebar.collapsed ul {
+    display: none; /* 收縮時隱藏清單 */
+  }
+  
+  /* 功能欄展開按鈕 */
+  .toggle-btn {
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    background-color: #333;
+    text-align: center;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    transition: background 0.2s;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #575757;
+  }
+  
+  /* 主要內容 */
+  .content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* 保留空間給側邊欄 */
+    transition: margin-left 0.3s;
+  }
+  
+  /* 設定內容區 */
+  #settings-content {
+    display: none;
+  }
+  
