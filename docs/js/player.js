@@ -15,10 +15,10 @@ fetch(`http://localhost:3000/players?player_unique_id=${id}`)
 						<p class="label">t_b</p>
 						<p class="label">draft_order</p>
 						<p class="label">position</p>
-					</div>
+					</div> 
 					<div class="valueColumn">
 						<p class="value">${data[0].player_name}</p>
-						<p class="value">none</p>
+						<p class="value">${data[0].number}</p>
 						<p class="value">${data[0].t_b}</p>
 						<p class="value">${data[0].draft_order}</p>
 						<p class="value">${data[0].position}</p>		

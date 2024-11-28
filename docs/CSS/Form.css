@@ -1,0 +1,160 @@
+.chooseYear{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.3);
+    display:flex;
+    
+}
+.chooseYearButton{
+    height:100%;
+    width: 80px;
+    background-color:rgba(128, 128, 128, 0);
+    font-size: 16px;
+    font-weight: 100;
+    border: none;
+}
+.chooseYearButton:hover{
+    background-color:rgba(128, 128, 128, 0.2)
+}
+.formLocation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formInput{
+    background-color: rgba(128, 128, 128, 0.2);
+    margin-top: 40px;
+    border: 1px solid rgba(128, 128, 128, 0.4);;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#chooseUpdatePlayer{
+    margin-bottom: 20px;
+    width: 306px;
+    height: 40px;
+    font-size: 17px;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+#chooseUpdatePlayer{
+    position: relative;
+}
+
+.chooseUpdatePlayer{
+    margin-bottom: 20px;
+    width: 306px;
+    height: 40px;
+    font-size: 17px;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+.chooseUpdatePlayer{
+    position: relative;
+}
+
+.formInputApart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.playerOptions{ 
+    position: absolute;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+    row-gap: 20px;
+    column-gap: 20px;
+    background-color: rgba(128, 128, 128, 0.7);
+    z-index: 1;
+}
+
+.playerOptions button{
+    margin-top: 10px;
+    margin-left:10px;
+    width: 100px;
+    height: 30px;
+}
+
+.formInput label{
+    font-family: "Roboto", "Serial";
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 1px;
+}
+.formInput input{
+    margin-bottom: 20px;
+    width: 300px;
+    height: 40px;
+    font-size: 17px;
+}
+.formInput select{
+    margin-bottom: 20px;
+    width: 308px;
+    height: 44px;
+    font-size: 17px;
+    font-family: "Roboto", "Serial";
+    font-weight: 500;
+}
+
+.formTitle{
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.EditButton{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;;
+}
+
+.submitButton{
+    margin-bottom: 20px;
+    width: 306px;
+    height: 40px;
+    font-size: 17px;
+    background-color: rgba(128, 128, 128, 0.4);
+    border: none;
+    border-radius: 3px;
+    font-size: 18px; 
+}
+.submitButton:hover{
+    background-color: rgba(128, 128, 128, 0.6);
+}
+.submitButton:active{
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+.chooseGameDateBlock{
+    position: relative;
+}
+
+.allGame{
+    left: 320px;
+    top: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.chooseGame{
+    
+}
+

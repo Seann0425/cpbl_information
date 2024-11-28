@@ -4,9 +4,8 @@ searchYearButton.forEach(button => {
     button.addEventListener('click', async (event) => {
         const yearVal = event.target.getAttribute('value');
         console.log(yearVal);
-
+        
         try {
-            // Fetch winner list for the selected year
             const winnerResponse = await fetch(`http://localhost:3000/winnerlist?years=${yearVal}`);
             const winnerData = await winnerResponse.json();
             if (!winnerData || winnerData.length === 0) {

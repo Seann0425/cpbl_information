@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../CSS/showMatch.css">
 	<link rel="stylesheet" href="../CSS/general.css">
 	<link rel="stylesheet" href="../CSS/navigationBar.css">
-
+	<link rel="stylesheet" href="../CSS/Form.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
@@ -60,5 +60,50 @@
 		
 	</div>
 	
+	<div class="EditButton">
+		<button id="choosePlayer">player</button>
+		<button id="chooseWinner">winner</button>
+	</div>
+
+	<div class="formLocation">
+		<div class="formInput">
+			<h1 class="formTitle">Insert Player</h1>
+
+			<div id="chooseUpdatePlayerBlock">
+				<button id="chooseUpdatePlayer">player</button>
+				<div class="playerOptions">
+
+				</div> 
+			</div>
+			<div id="chooseUpdatePlayerBlock">
+				<button id="chooseUpdatePlayer" value="1">Select Modify Player</button>
+				<div class="playerOptions">
+
+				</div>
+			</div>
+			<div id="chooseUpdatePlayerBlock">
+				<button id="chooseUpdatePlayer" value="1">Select Modify Player</button>
+				<div class="playerOptions">
+
+				</div>
+			</div>
+            <input type="text" placeholder="Name" id="player_name">
+            <input type="number" placeholder="Number" id="player_number">
+            <input type="number" placeholder="Height" id="player_height">
+            <input type="number" placeholder="Weight" id="player_weight">
+            <label for="player_birthday">Birthday</label>
+            <input type="date" placeholder="Birthday" id="player_birthday">
+            <label for="player_debut">Debut</label>
+            <input type="date" placeholder="Debut" id="player_debut">
+			<input type="text" placeholder="Nationality" id="player_nationality">
+            <input type="text" placeholder="Draft Order" id="player_draft_order">
+            <input type="text" placeholder="Position" id="player_position">
+            <button id="playerUpdateButton">Submit</button>
+        </div>
+	</div>
+	<script src="../js/choosePlayer.js"></script>
+	<script src="../js/updateNavigation.js"></script>
+	</div>
+
 </body>
 </html>
