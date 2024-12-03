@@ -338,36 +338,29 @@ chooseBattle.addEventListener('click', (event)=>{
     const formLocation = document.querySelector('.formLocation');
     formLocation.innerHTML = `
         <div class="formInput">
-            <h1 class="formTitle">Insert battle</h1>	
+            <h1 class="formTitle">Insert battle</h1>
+            <input type="text" placeholder="比賽編號" id="game_number">
+            <input type="text" placeholder="batter" id="batter">
+            <input type="text" placeholder="pitcher" id="pitcher">
+            <select>
+                <option value="1">三振</option>
+                <option value="2">一壘安打</option>
+                <option value="3">二壘安打</option>
+                <option value="4">三壘安打</option>
+                <option value="5">全壘打</option>
+                <option value="6">失誤</option>
+                <option value="7">四壞</option>
+                <option value="8">觸身</option>
+                <option value="9">滾地出局</option>
+                <option value="10">飛球出局</option>
+            </select>
+            <button id="battleInsertButton" class="submitButton">Submit</button>
         </div>
         
     `
-    const formInput = document.querySelector('.formInput');
-    addChooseGame();
-	addChoosePlayer(formInput, '選擇打手', 0);
-	addChoosePlayer(formInput, '選擇投手', 1);
 
-    const select = document.createElement('select');
-    select.innerHTML = `
-        <option value="1">三振</option>
-        <option value="2">一壘安打</option>
-        <option value="3">二壘安打</option>
-        <option value="4">三壘安打</option>
-        <option value="5">全壘打</option>
-        <option value="6">失誤</option>
-        <option value="7">四壞</option>
-        <option value="8">觸身</option>
-        <option value="9">滾地出局</option>
-        <option value="10">飛球出局</option>
-    `
-    formInput.appendChild(select);
 
-    const submitBattle = document.createElement('button');
-    submitBattle.id = 'submitBattle';
-    submitBattle.textContent = 'submit';
-    submitBattle.classList.add('submitButton');
-    formInput.appendChild(submitBattle);
-    //const choosePlayer = blocks[currNum].querySelector('.chooseUpdatePlayer');
+
     const player = document.querySelectorAll('.chooseUpdatePlayer');
     const chooseGameDateBlock = document.querySelector('.chooseGameDateBlock');
     //chooseG.classList.add('chooseGameDateBlock');
@@ -377,7 +370,7 @@ chooseBattle.addEventListener('click', (event)=>{
             'batter_id': player[0].id,
             'pitcher_id': player[1].id,
             'plate_appearance': select.value
-        }
+        } 
         console.log(insertData);
         fetch(`http://localhost:3000/battle`, {
 			'method': 'POST',

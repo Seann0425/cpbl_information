@@ -26,4 +26,4 @@ allTeam.addEventListener('click', (event) => {
         console.log(`${id}`);
         window.location.href = `../web_page/player.html?id=${id}`;
     }   
-});
+}); 
