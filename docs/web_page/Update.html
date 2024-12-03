@@ -61,32 +61,40 @@
 	</div>
 	
 	<div class="EditButton">
-		<button id="choosePlayer">player</button>
-		<button id="chooseWinner">winner</button>
+		<button id="choosePlayer" class="glow-on-hover">player</button>
+		<button id="chooseWinner" class="glow-on-hover">winner</button>
+		<button id="chooseGame" class="glow-on-hover">game</button>
+		
 	</div>
-
+	<script src="../js/winnerListYear.js"></script>
 	<div class="formLocation">
 		<div class="formInput">
 			<h1 class="formTitle">Insert Player</h1>
 
 			<div id="chooseUpdatePlayerBlock">
 				<button id="chooseUpdatePlayer">player</button>
-				<div class="playerOptions">
-
-				</div> 
-			</div>
-			<div id="chooseUpdatePlayerBlock">
-				<button id="chooseUpdatePlayer" value="1">Select Modify Player</button>
-				<div class="playerOptions">
-
+				<div class="fixPosition">
+					<div class="middlePosition">
+						<input type="text" class="searchPlayerInputText">
+						<button>search</button>
+					</div>
+					<div class="playerOptions">
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+						<button class="playerButton">a</button>
+					</div> 
 				</div>
+				
 			</div>
-			<div id="chooseUpdatePlayerBlock">
-				<button id="chooseUpdatePlayer" value="1">Select Modify Player</button>
-				<div class="playerOptions">
-
-				</div>
-			</div>
+			
             <input type="text" placeholder="Name" id="player_name">
             <input type="number" placeholder="Number" id="player_number">
             <input type="number" placeholder="Height" id="player_height">
@@ -101,8 +109,8 @@
             <button id="playerUpdateButton">Submit</button>
         </div>
 	</div>
-	<script src="../js/choosePlayer.js"></script>
-	<script src="../js/updateNavigation.js"></script>
+	
+	<script type="module" src="../js/updateNavigation.js"></script>
 	</div>
 
 </body>

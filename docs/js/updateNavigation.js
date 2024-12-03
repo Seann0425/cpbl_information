@@ -1,3 +1,6 @@
+import { addChooseUpdateGame } from "./chooseGame.js";
+import { addChooseUpdatePlayer } from "./choosePlayer.js";
+
 const changeToPlayer = document.getElementById('choosePlayer');
 changeToPlayer.addEventListener('click', (event) => {
     console.log('choosePlayer');
@@ -228,7 +231,7 @@ changeToWinner.addEventListener('click', async (event) => {
     const year = document.getElementById('year');
     for (let i = 2023; i >= 1990; i--)
     {
-        optionChild = document.createElement('option');
+        const optionChild = document.createElement('option');
         optionChild.textContent = i;
         optionChild.value = i;
         year.appendChild(optionChild);
@@ -431,3 +434,102 @@ changeToWinner.addEventListener('click', async (event) => {
     });
 });
 
+const chooseGame = document.getElementById('chooseGame');
+chooseGame.addEventListener('click', (event) => {
+    const form = document.querySelector('.formLocation');
+    form.innerHTML = `
+        <div class="formInput">	
+            <h1 class="formTitle">Update game</h1>	
+		</div>
+    `
+
+    
+
+    const formInput = document.querySelector('.formInput');
+    
+    function createInputElement(type, placeholder, id) {
+        const input = document.createElement('input');
+        input.type = type;
+        input.placeholder = placeholder;
+        input.id = id;
+        return input;
+    }
+    
+    addChooseUpdateGame();
+
+    formInput.appendChild(createInputElement('text', 'Home team', 'game_teamA'));
+    formInput.appendChild(createInputElement('text', 'Away team', 'game_teamB'));
+    formInput.appendChild(createInputElement('number', 'Home score', 'game_scoreA'));
+    formInput.appendChild(createInputElement('number', 'Away score', 'game_scoreB'));
+    formInput.appendChild(createInputElement('text', 'hp', 'game_hp'));
+    formInput.appendChild(createInputElement('text', '1b', 'game_1b'));
+    formInput.appendChild(createInputElement('text', '2b', 'game_2b'));
+    formInput.appendChild(createInputElement('text', '3b', 'game_3b'));
+    formInput.appendChild(createInputElement('text', 'Num of audience', 'game_audience'));
+    formInput.appendChild(createInputElement('text', 'Consume times', 'game_times'));
+    formInput.appendChild(createInputElement('text', 'MVP', 'game_mvp'));
+    
+    
+
+    const button = document.createElement('button');
+    button.id = 'gameInsertButton';
+    button.className = 'submitButton';
+    button.textContent = 'Submit';
+    formInput.appendChild(button);
+});
+
+/*const chooseBattle = document.getElementById('chooseBattle')
+chooseBattle.addEventListener('click', (event) => {
+    const formLocation = document.querySelector('.formLocation');
+    formLocation.innerHTML = `
+        <div class="formInput">
+            <h1 class="formTitle">Insert battle</h1>	
+        </div>
+        
+    `
+    const formInput = document.querySelector('.formInput');
+    addChooseUpdateGame();
+	addChooseUpdatePlayer(formInput, '選擇打手', 0);
+	addChooseUpdatePlayer(formInput, '選擇投手', 1);
+
+    const select = document.createElement('select');
+    select.innerHTML = `
+        <option value="1">三振</option>
+        <option value="2">一壘安打</option>
+        <option value="3">二壘安打</option>
+        <option value="4">三壘安打</option>
+        <option value="5">全壘打</option>
+        <option value="6">失誤</option>
+        <option value="7">四壞</option>
+        <option value="8">觸身</option>
+        <option value="9">滾地出局</option>
+        <option value="10">飛球出局</option>
+    `
+    formInput.appendChild(select);
+
+    const submitBattle = document.createElement('button');
+    submitBattle.id = 'submitBattle';
+    submitBattle.textContent = 'submit';
+    submitBattle.classList.add('submitButton');
+    formInput.appendChild(submitBattle);
+    //const choosePlayer = blocks[currNum].querySelector('.chooseUpdatePlayer');
+    const player = document.querySelectorAll('.chooseUpdatePlayer');
+    const chooseGameDateBlock = document.querySelector('.chooseGameDateBlock');
+    //chooseG.classList.add('chooseGameDateBlock');
+    submitBattle.addEventListener('click', () => {
+        const insertData = {
+            'game_number': chooseGameDateBlock.id,
+            'batter_id': player[0].id,
+            'pitcher_id': player[1].id,
+            'plate_appearance': select.value
+        }
+        console.log(insertData);
+        fetch(`http://localhost:3000/battle`, {
+			'method': 'POST',
+			'headers': {
+				'ContentType': 'Application/json'
+			},
+			'body': JSON.stringify(insertData)           
+		})
+    });
+});*/

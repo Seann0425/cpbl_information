@@ -1,4 +1,20 @@
 {
+  "battle": [
+    {
+      "id": "d1d7",
+      "game_number": "1",
+      "batter_id": "13",
+      "pitcher_id": "19",
+      "plate_appearance": "6"
+    },
+    {
+      "id": "4851",
+      "game_number": "",
+      "batter_id": "",
+      "pitcher_id": "",
+      "plate_appearance": "1"
+    }
+  ],
   "games": [
     {
       "game_date": "2024-11-13",
@@ -151,6 +167,21 @@
       "audience": "",
       "time": "",
       "mvp_player": ""
+    },
+    {
+      "id": "339d",
+      "game_date": "2024-12-26",
+      "home_team": "1234",
+      "away_team": "132",
+      "home_score": "1234",
+      "away_score": "1234",
+      "HP": "2134",
+      "1B": "1234",
+      "2B": "2134",
+      "3B": "1234",
+      "audience": "1",
+      "time": "1",
+      "mvp_player": "1"
     }
   ],
   "allPlayers": [
@@ -344,7 +375,7 @@
       "most_holds_player_id": 20,
       "id": "f59c"
     },
-    {  
+    {
       "years": 2022,
       "most_hits_player_id": 21,
       "highest_batting_average_player_id": 22,
@@ -1111,6 +1142,162 @@
       "nationality": "Taiwan",
       "draft_order": "first",
       "position": "123456"
+    },
+    {
+      "id": "b6d4",
+      "player_name": "",
+      "number": "50",
+      "t_b": "右投右打",
+      "height": "",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "dd3a",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "50",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "6caa",
+      "player_name": "1234",
+      "number": "1432",
+      "t_b": "右投右打",
+      "height": "30",
+      "weight": "214321",
+      "born": "",
+      "debut": "",
+      "nationality": "3214",
+      "draft_order": "214321",
+      "position": "14324"
+    },
+    {
+      "id": "e66e",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "1234",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "a872",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "132241",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "4d99",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "214",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "1e5d",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "83b0",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "de1d",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "1324123",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "05d8",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "113a",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
+    },
+    {
+      "id": "2dd1",
+      "player_name": "",
+      "number": "",
+      "t_b": "右投右打",
+      "height": "123423",
+      "weight": "",
+      "born": "",
+      "debut": "",
+      "nationality": "",
+      "draft_order": "",
+      "position": ""
     }
   ]
 }

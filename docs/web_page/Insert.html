@@ -39,30 +39,34 @@
 		</div>
 	</div>
 	<div class="EditButton">
-		<button id="choosePlayer">player</button>
-		<button id="chooseGame">game</button>
-		<button id="chooseBattle">battle</button>
+		<button id="choosePlayer" class="glow-on-hover">player</button>
+		<button id="chooseGame" class="glow-on-hover">game</button>
+		<button id="chooseBattle" class="glow-on-hover">battle</button>
 	</div>
 	<div class="formLocation">
 		<div class="formInput">
 			<h1 class="formTitle">Insert battle</h1>
 			
-
+			<select>
+				<option value="1">三振</option>
+				<option value="2">一壘安打</option>
+				<option value="3">二壘安打</option>
+				<option value="4">三壘安打</option>
+				<option value="5">全壘打</option>
+				<option value="6">失誤</option>
+				<option value="7">四壞</option>
+				<option value="8">觸身</option>
+				<option value="9">滾地出局</option>
+				<option value="10">飛球出局</option>
+			</select>
 			<button id="gameInsertButton" class="submitButton">Submit</button>
 		</div>
 	</div>
-	<script type="module">
-		import {addChoosePlayer} from '../js/choosePlayer.js';
-		const formInput = document.querySelector('.formInput');
-		await addChoosePlayer(formInput, 'chooseFirst', 0);
-		await addChoosePlayer(formInput, 'chooseSecond', 1);
-	</script>
+	
+	
 
 
-	
-	<script src="../js/chooseGame.js"></script>
-	<script src="../js/insertNavigation.js"></script>
-	
+	<script type="module" src="../js/insertNavigation.js"></script>
 	
 </body>
 </html>
