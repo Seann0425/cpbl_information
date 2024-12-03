@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CPBL Information</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Sidebar with Toggle Function and Settings</title>
+  <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-  <header>
-    <h1>歡迎來到 CPBL 資訊平台</h1>
-    <nav>
-      <ul>
+
+  <!-- 側邊功能欄 -->
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <ul>
         <li><a href="web_page/allPlayersWithoutTeam.html">player</a></li>
         <li><a href="web_page/score.html">score</a></li>
         <li><a href="web_page/winnerList.html">winnerList</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h2>最新賽事結果</h2>
-      <p>歡迎查詢最新賽事結果、球員資訊和比賽數據。</p>
-    </section>
-  </main>
-  <footer>
-    <p>© 2024 CPBL Information Platform</p>
-  </footer>
-  <script src="js/script.js"></script>
+        <li><a href="web_page/predict.html">predict</a></li>
+        <li><a href="web_page/Insert.html">Edit_data</a></li>
+    </ul>
+  </div>
+
+  <!-- 主要內容區域 -->
+  <div class="content" id="content">
+    <h1>歡迎來到 CPBL 資訊平台</h1>
+    <p>This is the main content area where you can place any content you want to display.</p>
+  </div>
+
+  <!-- 設定內容區域 -->
+  <div class="content" id="settings-content">
+    <h1>Settings</h1>
+    <p>This is the settings area where you can manage your preferences and configurations.</p>
+  </div>
+
+  <script src = "js/index.js">
+  </script>
 </body>
 </html>
