@@ -38,16 +38,30 @@
 
   <div class="user-input">
     <h3>Enter Your Details</h3>
-    <label for="pitcherName">pitcher Name:</label>
-    <input type="text" id="pitcherName" placeholder="Enter your pitcher name">
-    <br>
-    <label for="hitterName">hitter Name:</label>
-    <input type="text" id="hitterName" placeholder="Enter your hitter name">
-    <br>
-    <button onclick="showName()">Submit</button>
+    <form id="predictForm" action="/submit" method="POST">
+      <label for="pitcherName">Pitcher Name:</label>
+      <input type="text" id="pitcherName" name="pitcherName" placeholder="Enter your pitcher name" required>
+      <br>
+      <label for="hitterName">Hitter Name:</label>
+      <input type="text" id="hitterName" name="hitterName" placeholder="Enter your hitter name" required>
+      <br>
+      <p>OPS+:100*[(球員上壘率/聯盟上壘率)+(球員長打率/聯盟長打率)-1](衡量打者進攻能力)</p>
+      <p>ERA+:(League ERA / ERA) * Park Factor</p>
+      <p>ERA: 自責分*9 / 投球局數 </p>
+      <p>對決指數 = (打者 OPS+ / 100) * (100 / 投手 ERA+) * 場地因子</p>
+      
+      <div id="result">
+        <h3>Result:</h3>
+        <p id="duelIndex">Duel Index: </p>
+        <p id="batterOpsPlus">Batter OPS+: </p>
+        <p id="pitcherEraPlus">Pitcher ERA+: </p>
+        <p id="conclusion"></p>
+      </div>
+      
+      <button type="submit">Predict Outcome</button>
+    </form>
     <p id="displayName"></p>
   </div>
-
   <script src = ../js/predict.js>
   </script>
   
