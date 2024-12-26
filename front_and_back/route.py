@@ -1,9 +1,40 @@
 from model import Player,Games,WinnerList,match_results,LeagueStats
 from datetime import datetime
 from flask import Flask, render_template, jsonify, request
-from sqlalchemy import create_engine, text,func
+from sqlalchemy import func
 
-
+TEAM_LOGOS = {
+    # "隊名" : "連結"
+    "兄弟": "/static/picture_repository/brotherelephant.jpg",
+    "兄弟二軍": "/static/picture_repository/brotherelephant.jpg",
+    "中信": "/static/picture_repository/whale.jpg",
+    "中信二軍": "/static/picture_repository/whale.jpg",
+    "三商": "/static/picture_repository/tiger.png",
+    "統一7-ELEVEn獅": "/static/picture_repository/team_logo_lions_500x500.png",
+    "統一7-ELEVEn獅二軍": "/static/picture_repository/team_logo_lions_500x500.png",
+    "味全龍": "/static/picture_repository/dragon.png",
+    "味全龍二軍": "/static/picture_repository/dragon.png",   
+    "俊國": "/static/picture_repository/bear.png", 
+    "時報": "/static/picture_repository/eagle.jpg",
+    "興農": "/static/picture_repository/ox.png", 
+    "興農二軍": "/static/picture_repository/ox.png",   
+    "第一": "/static/picture_repository/kingkon.jpg",  
+    "誠泰": "/static/picture_repository/snake.png",  
+    "Lamigo": "/static/picture_repository/Lamigo.jpg",  
+    "Lamigo二軍": "/static/picture_repository/Lamigo.jpg",
+    "米迪亞": "/static/picture_repository/Dmedia.jpg",
+    "義大": "/static/picture_repository/rhino.jpg",
+    "義大二軍": "/static/picture_repository/rhino.jpg",
+    "中信兄弟": "/static/picture_repository/brother.png",
+    "中信兄弟二軍": "/static/picture_repository/brother.png",   
+    "富邦悍將": "/static/picture_repository/Fubon_Guardians.png",
+    "富邦悍將二軍": "/static/picture_repository/Fubon_Guardians.png",         
+    "樂天桃猿": "/static/picture_repository/Rakuten_Monkeys.png",
+    "樂天桃猿二軍": "/static/picture_repository/Rakuten_Monkeys.png",  
+    "台鋼雄鷹": "/static/picture_repository/TsgHawks.png",
+    "台鋼雄鷹二軍": "/static/picture_repository/TsgHawks.png"
+    # 添加更多團隊和對應的圖標路徑
+}
 
 def register_routes(app,db):
     #主頁連結
@@ -200,7 +231,9 @@ def register_routes(app,db):
                     "third_base": game.third_base,
                     "audience": game.audience,
                     "game_time": game.game_time,
-                    "game_status": game.game_status
+                    "game_status": game.game_status,
+                    "home_team_logo": TEAM_LOGOS.get(game.home_team, "/static/picture_repository/baseball.jpg"),
+                    "away_team_logo": TEAM_LOGOS.get(game.away_team, "/static/picture_repository/baseball.jpg")
                 })
 
             return jsonify(results)
@@ -223,6 +256,7 @@ def register_routes(app,db):
 
             # 將比賽數據轉為 JSON 格式返回
             results = []
+            
             for game in games:
                 results.append({
                     "game_date": game.game_date,
@@ -237,14 +271,16 @@ def register_routes(app,db):
                     "third_base": game.third_base,
                     "audience": game.audience,
                     "game_time": game.game_time,
-                    "game_status": game.game_status
+                    "game_status": game.game_status,
+                    "home_team_logo": TEAM_LOGOS.get(game.home_team, "/static/picture_repository/baseball.jpg"),
+                    "away_team_logo": TEAM_LOGOS.get(game.away_team, "/static/picture_repository/baseball.jpg")
                 })
 
             return jsonify(results)
 
             
-
         except Exception as e:
+            print(e)
             return jsonify({"error": str(e)}), 500
         
 
