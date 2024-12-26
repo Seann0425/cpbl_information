@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar with Toggle Function and Settings</title>
+  <link rel="stylesheet" href="../static/CSS/index.css">
+</head>
+<body>
+
+  <!-- 側邊功能欄 -->
+<div class="sidebar" id="sidebar">
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+  <ul>
+      <li>
+          <a href="{{ url_for('all_players') }}">
+              <div class="block">player</div>
+          </a>
+      </li>
+      <li>
+          <a href="{{ url_for('score') }}">
+              <div class="block">score</div>
+          </a>
+      </li>
+      <li>
+          <a href="{{ url_for('winnerlist') }}">
+              <div class="block">winnerList</div>
+          </a>
+      </li>
+      <li>
+          <a href="{{ url_for('predict') }}">
+              <div class="block">predict</div>
+          </a>
+      </li>
+      <li>
+          <a href="{{ url_for('insertplayer') }}">
+              <div class="block">Edit_data</div>
+          </a>
+      </li>
+  </ul>
+</div>
+
+  <!-- 主要內容區域 -->
+  <div class="content" id="content">
+    <h1>歡迎來到 CPBL 資訊平台</h1>
+    <p>This is the main content area where you can place any content you want to display.</p>
+  </div>
+
+  <!-- 設定內容區域 -->
+  <div class="content" id="settings-content">
+    <h1>Settings</h1>
+    <p>This is the settings area where you can manage your preferences and configurations.</p>
+  </div>
+
+  <script src = "../static/js/index.js">
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding-top: 60px;
+}
+
+.user-input {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 600px;
+}
+
+.user-input input {
+    margin: 5px 0;
+    padding: 5px;
+    width: 90%;
+    font-size: 14px;
+}
+
+.user-input button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.user-input button:hover {
+    background-color: #0056b3;
+}
+
+#displayName {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#pitcher-options button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#pitcher-options button:hover {
+    background-color: #0056b3;
+}
+
+.inline-container {
+    display: inline-block; /* 元素排列在同一行 */
+    vertical-align: middle; /* 垂直對齊 */
+    margin-right: 10px; /* 元素之間的間距 */
+  }
+
+  p {
+    display: inline-block; /* 保證波浪符號與其他元素同列 */
+    margin: 0; /* 移除默認的上下外邊距 */
+    vertical-align: middle; /* 對齊到中間 */
+  }
