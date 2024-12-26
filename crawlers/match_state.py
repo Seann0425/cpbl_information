@@ -3,8 +3,8 @@ import time
 import random
 from playwright.sync_api import sync_playwright
 
-output_path = "C:\\Users\\seany\\Code\\cpbl_information\\csv_files\\match_state_before1800.csv"
-input_path = "C:\\Users\\seany\\Code\\cpbl_information\\csv_files\\player_information.csv"
+output_path = ""
+input_path = "" # player_information.csv here
 
 # initialize CSV file and writer header
 with open(output_path, mode="w", newline="", encoding="utf-8") as output_file:
@@ -15,8 +15,8 @@ with open(input_path, mode="r", encoding="utf-8") as file:
     reader = csv.reader(file)
     next(reader) # skip header
     for (row_number, row) in enumerate(reader):
-        if row_number >= 1800:
-            break
+        if row_number < 1040 or row_number > 1170: # skip rows that have been processed
+            continue
         if row[10] == "投手":
             continue
         
@@ -24,7 +24,7 @@ with open(input_path, mode="r", encoding="utf-8") as file:
         data = {}
         
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=False)
+            browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             url = f"https://cpbl.com.tw/team/fighting?Acnt=000000{int(row[1]):04d}"
             page.goto(url)
@@ -77,17 +77,10 @@ with open(input_path, mode="r", encoding="utf-8") as file:
                         # get player data
                         page.wait_for_selector("xpath=//*[@id='bindVue']/div[2]/div[3]/div/table/tbody/tr")
                         players = page.locator("xpath=//*[@id='bindVue']/div[2]/div[3]/div/table/tbody/tr").all()
-                        print(len(players))
                         for (i, player) in enumerate(players):
                             if i == 0:
                                 continue # skip header
-                            # player_row = players.nth(i)
-                            try:
-                                opponent = player.locator("xpath=//span[@class='name']//a").get_attribute("href").split('=')[-1][-4:]
-                            except TimeoutError:
-                                continue
-                            # .get_attribute("href").split('=')[-1][-4:]
-                            print(i, player.locator("xpath=//span[@class='name']//a").inner_text())
+                            opponent = player.locator("xpath=//span[@class='name']//a").get_attribute("href").split('=')[-1][-4:]
                             PA = player.locator("xpath=//td[2]").inner_text()
                             AB = player.locator("xpath=//td[3]").inner_text()
                             RBI = player.locator("xpath=//td[4]").inner_text()
@@ -148,3 +141,4 @@ with open(input_path, mode="r", encoding="utf-8") as file:
                         + list(stats.values())
                         + [round(db_value, 3), round(k_value, 3)]
                     )
+        print(f"Row {row_number} done.")
