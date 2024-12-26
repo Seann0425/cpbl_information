@@ -24,14 +24,16 @@ class PlayerInformationSpider(scrapy.Spider):
             'debut',
             'nationality',
             'draft_order',
-            'position'
+            'position',
+            'team',
         ]
     }
 
     def start_requests(self):
         logging.getLogger('scrapy').propagate = False
         logging.getLogger('protego').propagate = False
-        with open('../csv_files/player_link.csv', 'r') as file:
+        input_file = "" # player_link.csv path here
+        with open(input_file, mode='r') as file:
             for line in file:
                 yield Request(url=line.strip())
 
@@ -51,4 +53,5 @@ class PlayerInformationSpider(scrapy.Spider):
         player['nationality'] = sel.css('#Content > div.ContHeader > div > div > dl > dd.nationality > div.desc::text').extract()
         player['draft_order'] = sel.css('#Content > div.ContHeader > div > div > dl > dd.draft > div.desc::text').extract()
         player['position'] = sel.css('#Content > div.ContHeader > div > div > dl > dd.pos > div.desc::text').extract()
+        player['team'] = sel.css('#Content > div.ContHeader > div > div > dl > dt > div.team::text').extract()
         yield player
