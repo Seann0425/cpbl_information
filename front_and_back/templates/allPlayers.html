@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Data</title>
-	<link rel="stylesheet" href="../CSS/general.css">
-	<link rel="stylesheet" href="../CSS/navigationBar.css">
+	<link rel="stylesheet" href="../static/CSS/general.css">
+	<link rel="stylesheet" href="../static/CSS/navigationBar.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +15,7 @@
 	<style>
 		.logo{
 			height: 240px;
-			
 			transition: height 0.15s;
-			
 		}
 		.logo:hover{
 			height: 250px;
@@ -29,7 +27,7 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-around;
-			height: 400px;
+
 			
 		}
 		.player_grid{
@@ -37,6 +35,7 @@
 			grid-template-columns: 150px 150px 150px 150px 150px 150px 150px;
 			column-gap: 20px;
 			row-gap: 45px;
+			overflow: hidden;
 		}
 
 		.playerButton{
@@ -96,42 +95,365 @@
 
 <body class="bodyPadding">
 	<div class="navigationBar">
-		<img class="CPBL-logo" src="../picture_repository/logo_new.png">
+		<img class="CPBL-logo" src="https://www.cpbl.com.tw/theme/common/images/project/logo_new.png">
 		<div class="navigationButtonList">
 			<div class="navigationButtonList">
 				<div class="block">
-					<a class="playerLink" href="allPlayers.html">Player</a>
+					<a class="playerLink" href="{{ url_for('allPlayers') }}">Player</a>
 					<div class="playerUnderLine"></div>
 				</div>
 				<div class="block">
-					<a class="scoreLink" href="score.html">Score</a>
+					<a class="scoreLink" href="{{ url_for('score') }}">Score</a>
 					<div class="scoreUnderLine"></div>
 				</div>
 				<div class="block">
-					<a class="winnerLink" href="winnerList.html">Winlist</a>
+					<a class="winnerLink" href="{{ url_for('winnerlist') }}">Winlist</a>
 					<div class="winnerUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="predictLink" href="{{ url_for('predict') }}">Predict</a>
+					<div class="predictUnderLine"></div>
 				</div>
 			</div>
 		</div>
+		<a class="changeData" href="{{ url_for('insertplayer') }}">Edit</a>
 	</div>
-	<a class="changeData" href="{{ url_for('insertplayer') }}">Edit</a>
-</div>
 
 
 	<div id="allTeams">
-		<div class="team">
+		<div class="team" id="brotherelephant">
 			<div class="horizontal-line">
 				<hr class="horizontal">
-				<h1 class="teamName">teamName</h1>
+				<h1 class="teamName">Brotherelephant</h1>
 			</div>
 			<div class="Info">
-				<img class="logo" src="../picture_repository//team_logo_lions_500x500.png">
+				<img class="logo" src="../static/picture_repository/brotherelephant.jpg">
 				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="whale">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Whale</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/whale.jpg">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="team_logo_lions_500x500">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Lions</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/team_logo_lions_500x500.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="dragon">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Dragon</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/dragon.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="bear">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Bear</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/bear.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="eagle">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Eagle</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/eagle.jpg">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="ox">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Ox</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/ox.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="kingkon">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">kingkon</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/kingkon.jpg">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="snake">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Snake</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/snake.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="Lamigo">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Lamigo</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Lamigo.jpg">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="Dmedia">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Dmedia</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Dmedia.jpg">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="rhino">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Rhino</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/rhino.jpg">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="brother">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Brother</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/brother.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="Fubon_Guardians">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Fubon Guardians</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Fubon_Guardians.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="Rakuten_Monkeys">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Rakuten Monkeys</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Rakuten_Monkeys.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="TsgHawks">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">TsgHawks</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/TsgHawks.png">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+				</div>
+			</div>
+		</div>
+		<div class="team" id="baseball">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Other</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/baseball.jpg">
+				<div class="player_grid">
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
+					<button class="playerButton">Name</button>
 					<button class="playerButton">Name</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="../js/allPlayersRequest.js"></script>
+	<script src="../static/js/allPlayersRequest.js"></script>
 </body>
 </html>
+<!--
+ 兄弟、兄弟二軍(brotherelephant.jpg)
+ 中信、中信二軍(whale.jpg)
+ 三商(tiger.png)
+ 統一7-ELEVEn獅、統一7-ELEVEn獅二軍(team_logo_lions_500x500.png)
+ 味全龍、味全龍二軍(dragon.png)
+ 俊國(bear.png)
+ 時報(eagle.jpg)
+ 興農、興農二軍(ox.png)
+ 第一(kingkon.jpg)
+ 誠泰(snake.png)
+ Lamigo、Lamigo二軍(Lamigo.jpg)
+ 米迪亞(Dmedia.jpg)
+ 義大、義大二軍(rhino.jpg)
+ 中信兄弟、中信兄弟二軍(brother.png)
+ 富邦悍將、富邦悍將二軍(Fubon_Guardians.png)
+ 樂天桃猿、樂天桃猿二軍(Rakuten_Monkeys.png)
+ 台鋼雄鷹、台鋼雄鷹二軍(TsgHawks.png)
+ 其他(baseball.jpg)
+-->
