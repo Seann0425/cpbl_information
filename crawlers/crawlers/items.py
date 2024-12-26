@@ -18,4 +18,6 @@ class PlayerItem(scrapy.Item):
     nationality = scrapy.Field() # varchar(50)
     draft_order = scrapy.Field() # varchar(50)
     position = scrapy.Field() # varchar(50)
+    team = scrapy.Field() # varchar(50)
+    
 
