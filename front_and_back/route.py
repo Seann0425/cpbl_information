@@ -42,6 +42,10 @@ def register_routes(app,db):
     def home():
         return render_template('index.html')
 
+    @app.route('/allPlayers')
+    def allPlayers():
+        return render_template('allPlayers.html')
+
     #一次顯示所有球員
     @app.route('/allPlayersWithoutTeam')
     def all_players():
