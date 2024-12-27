@@ -147,18 +147,17 @@ function selectBatter(player) {
 }
 
 //////////////////////
-
 // predict 按鍵
 function predictOutcome() {
   // 獲取選擇的投手和打者 ID
-  const pitcherId = selectedPitcherId; // 假設你已經存儲了選中的投手 ID
-  const batterId = selectedBatterId;  // 假設你已經存儲了選中的打者 ID
+  const pitcherId = selectedPitcherId;
+  const batterId = selectedBatterId;
 
   // 獲取年份區間
   const year1 = document.getElementById('year-range-1').value;
   const year2 = document.getElementById('year-range-2').value;
-  
-  if(year1 > year2){
+
+  if (year1 > year2) {
     alert('區間設定錯誤!');
     return;
   }
@@ -173,87 +172,81 @@ function predictOutcome() {
     return;
   }
 
-  // 測試前端是否有成功傳參數給後端
-  console.log(pitcherId);
-  console.log(batterId);
-  console.log(year1)
-  console.log(year2);
+  // 清空表格內容（確保舊結果被清除）
+  const tableBody = document.getElementById('result-table').querySelector('tbody');
+  tableBody.innerHTML = '';
 
   const url = `/predict-outcome?pitcher_id=${encodeURIComponent(pitcherId)}&batter_id=${encodeURIComponent(batterId)}&year1=${encodeURIComponent(year1)}&year2=${encodeURIComponent(year2)}`;
 
-  // 發送 GET 請求到後端
   fetch(url, {
-      method: 'GET',
-      headers: {
-      'Content-Type': 'application/json'
-      }
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
-  .then(response => response.json())
-  .then(data => {
-      // 處理後端返回的結果
-      // 檢查 success 狀態
+    .then((response) => response.json())
+    .then((data) => {
       if (data.success === false) {
-        alert(data.message); // 顯示錯誤消息
-        return; // 中止後續邏輯
-    }
-      const the_result = data.the_result; // 從返回的 data 中提取 the_result
-      
-      // 顯示表格
+        alert(data.message);
+        return;
+      }
+      const the_result = data.the_result;
+
+      // 顯示結果
       if (the_result.length > 0) {
         document.getElementById('prediction-result').style.display = 'block';
       }
-      displayPredictionResult(the_result)
-  })
-  .catch(error => {
+      displayPredictionResult(the_result);
+    })
+    .catch((error) => {
       console.error('Error:', error);
       alert('發送請求時發生錯誤，請稍後再試！');
-  });
+    });
 }
 
 // 做表格用的
 function displayPredictionResult(the_result) {
   const tableBody = document.getElementById('result-table').querySelector('tbody');
-  tableBody.innerHTML = ''; // 清空之前的内容
 
-  if (the_result.length === 0) {
-      const emptyRow = document.createElement('tr');
-      const emptyCell = document.createElement('td');
-      emptyCell.textContent = '無結果';
-      emptyCell.colSpan = 5; // 跨越所有列
-      emptyRow.appendChild(emptyCell);
-      tableBody.appendChild(emptyRow);
-      return;
+  // 確保清空表格
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
   }
 
-  the_result.forEach(record => {
-      const row = document.createElement('tr');
+  if (the_result.length === 0) {
+    const emptyRow = document.createElement('tr');
+    const emptyCell = document.createElement('td');
+    emptyCell.textContent = '無結果';
+    emptyCell.colSpan = 5;
+    emptyRow.appendChild(emptyCell);
+    tableBody.appendChild(emptyRow);
+    return;
+  }
 
-      // Player OBP
-      const playerOBPCell = document.createElement('td');
-      playerOBPCell.textContent = record.player_on_base_percentage; // 直接顯示字串
-      row.appendChild(playerOBPCell);
+  the_result.forEach((record) => {
+    const row = document.createElement('tr');
 
-      // League OBP
-      const leagueOBPCell = document.createElement('td');
-      leagueOBPCell.textContent = record.league_on_base_percentage; // 直接顯示字串
-      row.appendChild(leagueOBPCell);
+    const playerOBPCell = document.createElement('td');
+    playerOBPCell.textContent = record.player_on_base_percentage;
+    row.appendChild(playerOBPCell);
 
-      // Player SLG
-      const playerSLGCell = document.createElement('td');
-      playerSLGCell.textContent = record.player_slugging_percentage; // 直接顯示字串
-      row.appendChild(playerSLGCell);
+    const leagueOBPCell = document.createElement('td');
+    leagueOBPCell.textContent = record.league_on_base_percentage;
+    row.appendChild(leagueOBPCell);
 
-      // League SLG
-      const leagueSLGCell = document.createElement('td');
-      leagueSLGCell.textContent = record.league_slugging_percentage; // 直接顯示字串
-      row.appendChild(leagueSLGCell);
+    const playerSLGCell = document.createElement('td');
+    playerSLGCell.textContent = record.player_slugging_percentage;
+    row.appendChild(playerSLGCell);
 
-      // OPS+
-      const opsPlusCell = document.createElement('td');
-      opsPlusCell.textContent = record.ops_plus; // 顯示 OPS+
-      row.appendChild(opsPlusCell);
+    const leagueSLGCell = document.createElement('td');
+    leagueSLGCell.textContent = record.league_slugging_percentage;
+    row.appendChild(leagueSLGCell);
 
-      tableBody.appendChild(row);
+    const opsPlusCell = document.createElement('td');
+    opsPlusCell.textContent = record.ops_plus;
+    row.appendChild(opsPlusCell);
+
+    tableBody.appendChild(row);
   });
 }
 
