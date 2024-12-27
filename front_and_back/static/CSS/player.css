@@ -8,13 +8,13 @@
     padding-right: 30px;
     padding-left: 30px;
     height: 350px;
-    width: 800px;
-    background-color: rgb(30, 48, 89, 0.9);
+    width: 100%;
+    background-color: rgba(73, 81, 98, 0.9);
     border: 1px solid black;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .info{
     display: flex;
@@ -34,11 +34,11 @@
     
 }
 .positionLeft{
-    width: 200px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: space-around;
+    margin-right: 20px;
 }
 .positionRight{
     display: flex;
