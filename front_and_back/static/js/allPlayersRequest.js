@@ -13,7 +13,7 @@ fetch('/player/getallplayer')
         const snake = document.getElementById('snake');
         const Lamigo = document.getElementById('Lamigo');
         const Dmedia = document.getElementById('Dmedia');
-        const rhino = document.getElementById('(rhino');
+        const rhino = document.getElementById('rhino');
         const brother = document.getElementById('brother');
         const Fubon_Guardians = document.getElementById('Fubon_Guardians');
         const Rakuten_Monkeys = document.getElementById('Rakuten_Monkeys');
