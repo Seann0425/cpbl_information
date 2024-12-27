@@ -191,7 +191,7 @@ def register_routes(app,db):
                 }
                 for player in players
             ]
-            print(result)
+          
             return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -207,7 +207,7 @@ def register_routes(app,db):
             return jsonify({"error": "game_date is required"}), 400
 
         try:
-            print(game_date)
+
             # 查詢資料庫中符合 game_date 的比賽
             games = Games.query.filter_by(game_date=game_date).all()
             # 如果沒有找到比賽，返回提示訊息
@@ -571,7 +571,7 @@ def register_routes(app,db):
             # 查詢資料庫中的比賽
             game = Games.query.filter_by(game_date=game_date, game_number=game_id).first()
 
-            print(game)
+            
             if not game:
                 return jsonify({"error": "Game not found for the specified date and number."}), 404
 
@@ -627,7 +627,7 @@ def register_routes(app,db):
     def update_player(id):
         # 解析請求數據
         data = request.get_json()
-        print("Received data:", data)
+        
         # 確保請求包含需要更新的數據
         required_fields = [
             "player_name", "number", "t_b", "height", "weight",
@@ -674,7 +674,7 @@ def register_routes(app,db):
 
         data = request.get_json()
         # 根據年份查找相應的獲獎資料
-        print(data)
+     
         winner_data = WinnerList.query.filter_by(years=year).first()
         if not winner_data:
             return jsonify({"success": False, "message": f"No winner records found for year {year}"}), 404
