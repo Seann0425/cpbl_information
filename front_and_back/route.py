@@ -191,6 +191,7 @@ def register_routes(app,db):
                 }
                 for player in players
             ]
+            print(result)
             return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -477,7 +478,7 @@ def register_routes(app,db):
         data = request.get_json()
 
         # 確保接收到必需的字段
-        if not all(field in data for field in ['name','number', 't_b', 'height', 'weight', 'born', 'debut', 'nationality', 'draft_order', 'position','team']):
+        if not all(field in data for field in ['player_name','number', 't_b', 'height', 'weight', 'born', 'debut', 'nationality', 'draft_order', 'position','team']):
             return jsonify({"message": "Missing required fields"}), 400
 
         # 創建 Player 實例
@@ -626,11 +627,11 @@ def register_routes(app,db):
     def update_player(id):
         # 解析請求數據
         data = request.get_json()
-        #print("Received data:", data)
+        print("Received data:", data)
         # 確保請求包含需要更新的數據
         required_fields = [
             "player_name", "number", "t_b", "height", "weight",
-            "born", "debut", "nationality", "draft_order", "position"
+            "born", "debut", "nationality", "draft_order", "position" ,"team"
         ]
         for field in required_fields:
             if field not in data:
@@ -653,6 +654,7 @@ def register_routes(app,db):
             player.nationality = data["nationality"]
             player.draft_order = data["draft_order"]
             player.position = data["position"]
+            player.team = data["team"]
 
             # 保存更改到數據庫
             db.session.commit()
