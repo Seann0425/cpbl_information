@@ -26,9 +26,9 @@
 			display:flex;
 			flex-direction: row;
 			align-items: center;
-			justify-content: space-around;
+			justify-content: space-between;
 
-			
+			padding-right: 100px;
 		}
 		.player_grid{
 			display: grid;
@@ -91,13 +91,15 @@
 			border-width: 2px;
 			top: 5px;
 		}
-
+		
 	</style>
 </head>
 
 <body class="bodyPadding">
 	<div class="navigationBar">
-		<img class="CPBL-logo" src="https://www.cpbl.com.tw/theme/common/images/project/logo_new.png">
+		<a href="{{ url_for('home') }}">
+			<img class="CPBL-logo" src="../static/picture_repository/logo_new.png" alt="CPBL Logo">
+		</a>
 		<div class="navigationButtonList">
 			<div class="navigationButtonList">
 				<div class="block">
@@ -131,6 +133,7 @@
 			<div class="Info">
 				<img class="logo" src="../static/picture_repository/brotherelephant.jpg">
 				<div class="player_grid" id="brotherelephant">
+					
 				</div>
 			</div>
 		</div>
@@ -142,6 +145,7 @@
 			<div class="Info">
 				<img class="logo" src="../static/picture_repository/whale.jpg">
 				<div class="player_grid" id="whale">
+					
 				</div>
 			</div>
 		</div>
@@ -175,6 +179,7 @@
 			<div class="Info">
 				<img class="logo" src="../static/picture_repository/dragon.png">
 				<div class="player_grid" id="dragon">
+					<button></button>
 				</div>
 			</div>
 		</div>
