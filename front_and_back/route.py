@@ -191,6 +191,7 @@ def register_routes(app,db):
                 }
                 for player in players
             ]
+            print(result)
             return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
