@@ -13,6 +13,21 @@
 						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
 						rel="stylesheet">
   <title>Predict</title>
+  <style>
+    #ops-explanation-table {
+      position: flex; /* 絕對定位 */
+      top: 300px; /* 距離頂部的固定位置 */
+      left: 20px; /* 距離左側的固定位置 */
+      width: 400px; /* 表格的固定寬度 */
+      text-align: center; /* 表格文字置中 */
+      border-collapse: collapse; /* 合併邊框 */
+    }
+
+    #ops-explanation-table th, #ops-explanation-table td {
+        border: 1px solid black; /* 表格邊框樣式 */
+        padding: 10px; /* 單元格內的填充 */
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +37,7 @@
     </a>
     <div class="navigationButtonList">
       <div class="block">
-        <a class="playerLink" href="{{ url_for('allPlayers') }}">Player</a>
+        <a class="playerLink" href="{{ url_for('all_players') }}">Player</a>
         <div class="playerUnderLine"></div>
       </div>
       <div class="block">
@@ -73,10 +88,34 @@
       <button id="predict-button" type="button" onclick="showOutcome()">顯示對戰紀錄</button>
       <button id="predict-button" type="button" onclick="predictOutcome()">Predict Outcome</button>
     </form>
-
     <div id="outcome" style="margin-top: 20px;"></div>
+    <div id="ops-explanation" style="margin-top: 20px; right:500px;"></div>
+      <table id="ops-explanation-table">
+        <thead>
+          <tr>
+            <th>OPS+值</th>
+            <th>解釋</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&gt;100</td>
+            <td>打者高機率會贏投手</td>
+          </tr>
+          <tr>
+            <td>~100</td>
+            <td>雙方勢均力敵</td>
+          </tr>
+          <tr>
+            <td>&lt;100</td>
+            <td>投手高機率會贏打者</td>
+          </tr>
+        </tbody>
+      </table>    
+    </div>
   </div>
 
+  
   <!-- 投手選項顯示區域 -->
   <div id="pitcher-options" style="width: 50%; padding: 20px; border-left: 1px solid #ccc; overflow-y: auto;"></div>
   <div id="batter-options" style="width: 50%; padding: 20px; border-left: 1px solid #ccc; overflow-y: auto;"></div>
@@ -95,31 +134,6 @@
         </thead>
         <tbody>
         </tbody>
-    </table>
-  </div>
-  <div id="ops-explanation" style="position: fixed; bottom: 20px; left: 20px; width: 300px; margin-top: 20px; background-color: white; border: 1px solid black; z-index: 1000;"></div>
-    <h3>OPS+ 說明 （基於過往的紀錄做預測）</h3>
-    <table border="1" style="width: 100%; text-align: center; border-collapse: collapse;">
-      <thead>
-        <tr>
-          <th>OPS+ 值</th>
-          <th>解釋</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>&gt;100</td>
-          <td>打者高機率會贏投手</td>
-        </tr>
-        <tr>
-          <td>~100</td>
-          <td>雙方勢均力敵</td>
-        </tr>
-        <tr>
-          <td>&lt;100</td>
-          <td>投手高機率會贏打者</td>
-        </tr>
-      </tbody>
     </table>
   </div>
 </div>
