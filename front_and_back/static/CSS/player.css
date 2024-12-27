@@ -60,3 +60,8 @@
     justify-content: space-around;
     align-items: flex-start;
 }
+p {
+    white-space: nowrap; 
+    overflow: hidden;    
+    text-overflow: ellipsis; 
+}
