@@ -31,7 +31,7 @@ submitButton.addEventListener('click', (event) => {
     const nationality = document.getElementById('player_nationality').value;
     const draftOrder = document.getElementById('player_draft_order').value;
     const position = document.getElementById('player_position').value;
-    const team = document.getElementById('player_position').value;
+    const team = document.getElementById('player_team').value;
 
     
     let isValid = true;

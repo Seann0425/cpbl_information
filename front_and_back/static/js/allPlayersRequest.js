@@ -32,64 +32,92 @@ fetch('/player/getallplayer')
             switch(player.team) {
                 case '兄弟\r':
                 case '兄弟二軍\r':
+                case '兄弟':
+                case '兄弟二軍':
                     brotherelephant.appendChild(button);
                     break;
                 case '中信\r':
                 case '中信二軍\r':
+                case '中信':
+                case '中信二軍':
                     whale.appendChild(button);
                     break;
                 case '三商\r':
+                case '三商':
                     tiger.appendChild(button);
                     break;
                 case '統一7-ELEVEn獅\r':
                 case '統一7-ELEVEn獅二軍\r':
+                case '統一7-ELEVEn獅':
+                case '統一7-ELEVEn獅二軍':
                     team_logo_lions_500x500.appendChild(button);
                     break;
                 case '味全龍\r':
                 case '味全龍二軍\r':
+                case '味全龍':
+                case '味全龍二軍':
                     dragon.appendChild(button);
                     break;
                 case '俊國\r':
+                case '俊國':
                     bear.appendChild(button);
                     break;
                 case '時報\r':
+                case '時報':
                     eagle.appendChild(button);
                     break;
                 case '興農\r':
                 case '興農二軍\r':
+                case '興農':
+                case '興農二軍':
                     ox.appendChild(button);
                     break;
                 case '第一\r':
+                case '第一':
                     kingkon.appendChild(button);
                     break;
                 case '誠泰\r':
+                case '誠泰':
                     snake.appendChild(button);
                     break;
                 case 'Lamigo\r':
                 case 'Lamigo二軍\r':
+                case 'Lamigo':
+                case 'Lamigo二軍':
                     Lamigo.appendChild(button);
                     break;
                 case '米迪亞\r':
+                case '米迪亞':
                     Dmedia.appendChild(button);
                     break;
                 case '義大\r':
                 case '義大二軍\r':
+                case '義大':
+                case '義大二軍':
                     rhino.appendChild(button);
                     break;
                 case '中信兄弟\r':
                 case '中信兄弟二軍\r':
+                case '中信兄弟':
+                case '中信兄弟二軍':
                     brother.appendChild(button);
                     break;
                 case '富邦悍將\r':
                 case '富邦悍將二軍\r':
+                case '富邦悍將':
+                case '富邦悍將二軍':
                     Fubon_Guardians.appendChild(button);
                     break;
                 case '樂天桃猿\r':
                 case '樂天桃猿二軍\r':
+                case '樂天桃猿':
+                case '樂天桃猿二軍':
                     Rakuten_Monkeys.appendChild(button);
                     break;
                 case '台鋼雄鷹\r':
                 case '台鋼雄鷹二軍\r':
+                case '台鋼雄鷹':
+                case '台鋼雄鷹二軍':
                     TsgHawks.appendChild(button);
                     break;
                 default:
