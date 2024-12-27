@@ -1,6 +1,8 @@
 fetch('/player/getallplayer')
     .then(res => res.json())
     .then(data => {
+        console.log('a');
+        console.log(data);
         const brotherelephant = document.getElementById('brotherelephant');
         const kingkon = document.getElementById('kingkon');
         const whale = document.getElementById('whale');

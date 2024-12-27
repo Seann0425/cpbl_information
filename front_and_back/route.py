@@ -477,7 +477,7 @@ def register_routes(app,db):
         data = request.get_json()
 
         # 確保接收到必需的字段
-        if not all(field in data for field in ['player_name','number', 't_b', 'height', 'weight', 'born', 'debut', 'nationality', 'draft_order', 'position','team']):
+        if not all(field in data for field in ['name','number', 't_b', 'height', 'weight', 'born', 'debut', 'nationality', 'draft_order', 'position','team']):
             return jsonify({"message": "Missing required fields"}), 400
 
         # 創建 Player 實例
