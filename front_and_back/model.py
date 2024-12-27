@@ -2,7 +2,7 @@ from app import db
 
 class Player(db.Model):
     __tablename__ = 'players'
-    player_name = db.Column(db.String(50), nullable=False)  # 球員姓名
+    name = db.Column(db.String(50), nullable=False)  # 球員姓名
     player_unique_id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # 自增的球員唯一ID
     number = db.Column(db.Integer, nullable=False)
     t_b = db.Column(db.String(50))  # 投打習慣
@@ -13,6 +13,7 @@ class Player(db.Model):
     nationality = db.Column(db.String(50))  # 國籍
     draft_order = db.Column(db.String(50))  # 選秀順位
     position = db.Column(db.String(50))  # 位置
+    team = db.Column(db.String(50))  # 位置
 
 class Games(db.Model):
     __tablename__ = 'games'

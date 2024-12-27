@@ -31,6 +31,7 @@ fetch(`/players/searchplayer?player_unique_id=${id}`)
 						<p class="label">nationality</p>
 						<p class="label">height</p>
 						<p class="label">weight</p>
+						<p class="label">Team</p>
 					</div>
 					<div class="valueColumn">
 						<p class="value">${data[0].born}</p>

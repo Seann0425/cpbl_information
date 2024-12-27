@@ -29,7 +29,8 @@ fetch('/player/getallplayer')
                 console.log(`${id}`);
                 window.location.href = `/player?id=${id}`;
             });
-            switch(button.textContent) {
+            console.log(player.team);
+            switch(player.team) {
                 case '兄弟':
                 case '兄弟二軍':
                     brotherelephant.appendChild(button);

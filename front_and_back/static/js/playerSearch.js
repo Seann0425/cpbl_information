@@ -102,7 +102,7 @@ export function playerSearchUpdatePlayer(id, text, practiceInput)
         const dateString1 = data[0].born;
         const dateString2 = data[0].debut;
         const date1 = new Date(dateString1);
-        const date2 = new Date(dateString1);
+        const date2 = new Date(dateString2);
 
         // Reset the time to midnight (00:00:00)
         const dateOnly = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());

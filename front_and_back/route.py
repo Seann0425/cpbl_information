@@ -44,13 +44,8 @@ def register_routes(app,db):
 
     @app.route('/allPlayers')
     def allPlayers():
-        return render_template('allPlayers.html')
-
-    #一次顯示所有球員
-    @app.route('/allPlayersWithoutTeam')
-    def all_players():
-        return render_template('allPlayersWithoutTeam.html')
-
+        return render_template('allPlayers.html')  
+    
     #球賽紀錄
     @app.route('/score')
     def score():
@@ -60,6 +55,7 @@ def register_routes(app,db):
     @app.route('/winnerlist')
     def winnerlist():
         return render_template('winnerList.html')
+     
 
     #插入球員頁面
     @app.route('/insertplayer')
@@ -133,11 +129,9 @@ def register_routes(app,db):
                 "most_saves_player_id": winner.most_saves_player_id,
                 "most_holds_player_id": winner.most_holds_player_id
             }]
-            print(jsonify(result))
             return jsonify(result)
 
         except Exception as e:
-            print("ok\n")
             return jsonify({"error": str(e)}), 500
 
     # API：取得球員詳細資料
@@ -160,7 +154,7 @@ def register_routes(app,db):
 
             # 將 ORM 對象轉換為字典格式返回
             result2 = [{
-                    "player_name": player.player_name,
+                    "player_name": player.name,
                     "player_unique_id": player.player_unique_id,
                     "number": player.number,
                     "t_b": player.t_b,
@@ -171,7 +165,7 @@ def register_routes(app,db):
                     "nationality": player.nationality,
                     "draft_order": player.draft_order,
                     "position": player.position,
-                    "team": "樂天桃園"
+                    "team": player.team
             }]
             return jsonify(result2)
 
@@ -183,7 +177,6 @@ def register_routes(app,db):
     #回傳所有球員的id和名字
     @app.route('/player/getallplayer', methods=['GET'])
     def get_all_players():
-        print('a')
         try:
             players = Player.query.all()
             if not players:
@@ -192,8 +185,9 @@ def register_routes(app,db):
             # 將 ORM 對象轉換為 JSON
             result = [
                 {
-                    "player_name": player.player_name,
-                    "player_unique_id": player.player_unique_id
+                    "player_name": player.name,
+                    "player_unique_id": player.player_unique_id,
+                    "team":player.team
                 }
                 for player in players
             ]
@@ -483,7 +477,7 @@ def register_routes(app,db):
         data = request.get_json()
 
         # 確保接收到必需的字段
-        if not all(field in data for field in ['player_name','number', 't_b', 'height', 'weight', 'born', 'debut', 'nationality', 'draft_order', 'position']):
+        if not all(field in data for field in ['player_name','number', 't_b', 'height', 'weight', 'born', 'debut', 'nationality', 'draft_order', 'position','team']):
             return jsonify({"message": "Missing required fields"}), 400
 
         # 創建 Player 實例
@@ -497,7 +491,8 @@ def register_routes(app,db):
             debut=data['debut'],
             nationality=data['nationality'],
             draft_order=data['draft_order'],
-            position=data['position']
+            position=data['position'],
+            team=data['team']
         )
 
         # 儲存資料到資料庫
@@ -598,7 +593,7 @@ def register_routes(app,db):
 
         try:
             # 查詢符合名字的投手
-            players = Player.query.filter(Player.player_name.like(f"%{player_name}%")).all()
+            players = Player.query.filter(Player.name.like(f"%{player_name}%")).all()
 
             if not players:
                 return jsonify({"exists": False, "players": []}), 200
@@ -609,10 +604,10 @@ def register_routes(app,db):
             for player in players:
                  player_list.append({
                     "player_unique_id": player.player_unique_id,
-                    "player_name": player.player_name,
+                    "player_name": player.name,
                     "t_b": player.t_b,
                     "number":player.number,
-                    "team":"樂天桃園",
+                    "team":player.team,
                     "height": player.height,
                     "weight": player.weight,
                     "born": player.born,
@@ -711,7 +706,7 @@ def register_routes(app,db):
         try:
             # 如果提供了 player_name，進行模糊搜尋
             if player_name:
-                players = Player.query.filter(Player.player_name.ilike(f"%{player_name}%")).all()
+                players = Player.query.filter(Player.name.ilike(f"%{player_name}%")).all()
             else:
                 return jsonify({"error": "Missing 'player_name' parameter"}), 400
 
@@ -724,7 +719,7 @@ def register_routes(app,db):
                     a=a-1
                     player_list.append({
                         "player_unique_id": player.player_unique_id,
-                        "player_name": player.player_name,
+                        "player_name": player.name,
                     })
 
             return jsonify(player_list), 200
