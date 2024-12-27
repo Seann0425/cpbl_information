@@ -482,7 +482,7 @@ def register_routes(app,db):
 
         # 創建 Player 實例
         new_player = Player(
-            player_name=data['player_name'],
+            name=data['player_name'],
             number=data['number'],
             t_b=data['t_b'],
             height=data['height'],
