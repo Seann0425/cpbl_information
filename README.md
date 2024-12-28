@@ -1,24 +1,32 @@
-# cpbl_information
-Final Project of DBMS
+# CPBL 資訊平台
 
-* crawlers/crawlers/spiders/ 内的蜘蛛透過scrapy runspider來運行
-* playwright使用playwright install chromium做web自動化
+## 項目介紹
 
-## 更新：
-1. games_deatails.html -> game_details.html (檔名改了）
-2. score 的相關功能即和版面，包含不同隊伍圖片的顯示
-3. Player、Game的insert完成
-4. Player、winnerlist的update完成
-5. predict ops+計算完成
+本專案提供給台灣棒球迷一個新的網頁使其除了能夠自己新增比賽內容、球員外，也能更新比賽資訊及年度獎項人選。此外，我們的網站配合資料庫也能夠針對某一組投手及打者做出打席預測，利用選定年間的對戰紀錄利用OPS+這項數值預測在接下來的打席誰會較有優勢。
+
+## 功能列表
+
+1. 檢視球員資訊
+2. 顯示年度獎項清單
+3. 搜索檢視比賽資訊
+4. 針對某一組投手及打者，列出給定年份的對戰紀錄及計算OPS+做出對應預測
+5. 在資料庫中新增新的球員及比賽
+6. 更新資料庫中球員資訊及年度獎項資訊
+7. 刪除資料庫中比賽及年度獎項
+
+## 部署指南
+在MySQL資料庫對應table加入`csv_files`中對應檔案。之後更改`app.py`中的連接設定，執行`run.py`便可順利運行。
+
+## 資料集
+* 來源：[中華職棒大聯盟全球資訊網](https://www.cpbl.com.tw/)
+* 透過Scrapy、Selenium、Playewright框架完成爬蟲
+* ER Model：
+![image](https://hackmd.io/_uploads/S1ZJaKTrkl.png)
 
 
-### 已完成:
-Player / Winlist / Delete / Score /Predict / Update
-
-# 前端
-.css .js放在 static 裡
-.html (網頁）放在 templates
-
-# 後端
-route.py / app.py / model.py / run.py / requirements.txt 是最主要的後端程式
-route_test是另外編輯的 是為了測試特定功能而架的後端 僅有特地功能
+## 分工表
+| 分工     | 負責           |
+| -------- | -------------- |
+| 資料準備 | 余逸翔、林冠成 |
+| 前端     | 楊淯棋、曾子堤 |
+| 後端     | 張盛瑋         |
