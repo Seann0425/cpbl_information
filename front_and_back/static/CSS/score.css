@@ -1,0 +1,22 @@
+
+/* set edit & home 按鈕 */
+.searchButton .changeData {
+    font-size: 20px; /* 修改字體大小 */
+    color: blue; /* 修改文字顏色 */
+}
+
+.searchButton .changeData:hover {
+    color: darkblue; /* 鼠標懸停時改變顏色 */
+    background-color: rgba(128, 128, 128, 0.9); /* 懸停時修改背景色 */
+    cursor: pointer; /* 鼠標變為手型 */
+}
+
+.searchButton .changeData:active {
+    color: red; /* 點擊時文字變為紅色 */
+    background-color: rgba(128, 128, 128, 1); /* 點擊時背景色略深 */
+}
+
+
+.bodyPadding {
+    padding-top: 100px;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Data</title>
+  
+    <link rel="stylesheet" href="../static/CSS/general.css">
+    <link rel="stylesheet" href="../static/CSS/navigationBar.css">
+    <link rel="stylesheet" href="../static/CSS/newForm.css">
+    <link rel="stylesheet" href="../static/CSS/fChoosePlayer.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
+						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+						rel="stylesheet">
+</head>
+
+<body id="body" style="padding-top:70px">
+	<div class="navigationBar">
+		<a href="{{ url_for('home') }}" target="_blank">
+			<img class="CPBL-logo" src="https://www.cpbl.com.tw/theme/common/images/project/logo_new.png">
+		</a>
+		<div class="navigationButtonList">
+			<div class="navigationButtonList">
+				<div class="block" id="navigationBarInsertBlock">
+					<a class="playerLink"  id="navigationBarInsert">Insert</a>
+					<div class="playerUnderLine"></div>
+				</div>
+				<div class="block" id="navigationBarUpdateBlock">
+					<a class="scoreLink"  id="navigationBarUpdate">Update</a>
+					<div class="scoreUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="winnerLink" href="{{ url_for('delete') }}">Delete</a>
+					<div class="winnerUnderLine"></div>
+				</div>
+			</div>
+		</div>
+        <div id="hoverNavigation">        
+        </div>
+        <div>
+            <a class="changeData" href="{{ url_for('home') }}">Home</a>
+            <div class="Home"></div>
+          </div>
+	
+	</div>
+
+
+
+	<div class="formLocation">
+		<div class="formTitle">Update Player</div>
+        <div class="formInputBlock" id="player_name_block">
+            <input type="text" class="formInputContent" id="player_name" placeholder="">
+            <div class="formInputTag" id="player_name_tag">name</div>
+            <div id="name-error-message" style="color: red; display: none; font-size: 15px;">請輸入名子！</div>
+            <div id="player-no-choose-error-message" style="color: red; display: none; font-size: 15px;">請按綠色按鈕選擇球員！</div>
+            <button class="practiceChoosePlayer">choosePlayer</button>
+            <div class="practice"></div>
+        </div>
+        
+
+        <div class="formInputBlock" id="player_number_block">
+            <input type="number" class="formInputContent" id="player_number" placeholder="">
+            <div class="formInputTag" id="player_number_tag">number</div>
+            <div id="number-error-message" style="color: red; display: none; font-size: 15px;">請輸入號碼！</div>
+        </div>
+        <div class="formInputBlock" id="player_height_block">
+            <input type="number" class="formInputContent" id="player_height" placeholder="">
+            <div class="formInputTag" id="player_height_tag">height</div>
+            <div id="height-error-message" style="color: red; display: none; font-size: 15px;">請輸入合理的身高！</div>
+        </div>
+        <div class="formInputBlock" id="player_weight_block">
+            <input type="number" class="formInputContent" id="player_weight" placeholder="">
+            <div class="formInputTag" id="player_weight_tag">weight</div>
+            <div id="weight-error-message" style="color: red; display: none; font-size: 15px;">請輸入合理的體重！</div>
+        </div>
+        <div class="formInputBlock">
+            <select class="formSelectBattleState" id="player_tb">
+                <option value="左投左打">左投左打</option>
+                <option value="左投右打">左投右打</option>
+                <option value="右投左打">右投左打</option>
+                <option value="右投右打">右投右打</option>
+            </select>
+            <div class="formInputTag" id="player_tb_tag">投打習慣</div>
+        </div>
+        <div class="formInputBlock" id="player_birthday_block">
+            <input type="date" class="formInputContent" id="player_birthday" placeholder="">
+            <div class="formInputTag" id="player_birthday_tag">birthday</div>
+            <div id="birthday-error-message" style="color: red; display: none; font-size: 15px;">請選擇生日！</div>
+        </div>
+        <div class="formInputBlock" id="player_debut_block">
+            <input type="date" class="formInputContent" id="player_debut" placeholder="">
+            <div class="formInputTag" id="player_debut_tag">debut</div>
+            <div id="debut-error-message" style="color: red; display: none; font-size: 15px;">請選擇Debut！</div>
+        </div>
+        <div class="formInputBlock" id="player_nationality_block">
+            <input type="text" class="formInputContent" id="player_nationality" placeholder="">
+            <div class="formInputTag" id="player_nationality_tag">nationality</div>
+            <div id="nationality-error-message" style="color: red; display: none; font-size: 15px;">請輸入國籍！</div>
+        </div>
+        <div class="formInputBlock" id="player_draft_block">
+            <input type="text" class="formInputContent" id="player_draft_order" placeholder="">
+            <div class="formInputTag" id="player_draft_order_tag">draft order</div>
+        </div>
+        <div class="formInputBlock" id="player_position_block">
+            <input type="text" class="formInputContent" id="player_position" placeholder="">
+            <div class="formInputTag" id="player_position_tag">position</div>
+            <div id="position-error-message" style="color: red; display: none; font-size: 15px;">請輸入位置！</div>
+        </div>
+        <div class="formInputBlock" id="player_team_block">
+            <input type="text" class="formInputContent" id="player_team" placeholder="">
+            <div class="formInputTag" id="player_team_tag">team</div>
+            <div id="team-error-message" style="color: red; display: none; font-size: 15px;">請輸入隊伍！</div>
+        </div>
+        <input type="submit" class="formInputSubmit" id="playerUpdateButton">
+	</div>
+	
+	<script type="module" src="../static/js/updatePlayer.js"></script>
+    <script src="../static/js/editModeNavigation.js"></script>
+
+</body>
+</html>

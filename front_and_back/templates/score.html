@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Score</title>
+
+  <link rel="stylesheet" href="../static/CSS/general.css">
+  <link rel="stylesheet" href="../static/CSS/navigationBar.css">
+  <link rel="stylesheet" href="../static/CSS/showMatch.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
+						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+						rel="stylesheet">
+</head>
+
+<body class="bodyPadding">
+	<div class="navigationBar">
+		<a href="{{ url_for('home') }}" target="_blank">
+			<img class="CPBL-logo" src="https://www.cpbl.com.tw/theme/common/images/project/logo_new.png">
+		</a>
+		<div class="navigationButtonList">
+			<div class="navigationButtonList">
+				<div class="block">
+					<a class="playerLink" href="{{ url_for('allPlayers') }}">Player</a>
+					<div class="playerUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="scoreLink" href="{{ url_for('score') }}">Score</a>
+					<div class="scoreUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="winnerLink" href="{{ url_for('winnerlist') }}">Winlist</a>
+					<div class="winnerUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="predictLink" href="{{ url_for('predict') }}">Predict</a>
+					<div class="predictUnderLine"></div>
+				</div>
+			</div>
+		</div>
+		<a class="changeData" href="{{ url_for('insertplayer') }}">Edit</a>
+	</div>
+
+	<div class="timeInput">
+		<label for="year" class="timeLabel">Year </label>
+		<select id="year" class="button_down"></select>
+
+		<label for="month" class="timeLabel">Month </label>
+		<select id="month" class="button_down"></select>
+
+		<label for="day" class="timeLabel">Day </label>
+		<select id="day" class="button_down"></select>
+
+		<button id="searchButton">search</button>
+	</div>
+	
+	<div id="allGames"></div>
+	<script src="../static/js/scoreDropButton.js"></script>
+	<script src="../static/js/score.js"></script>
+	<script src="../static/js/downButton.js"></script>
+	
+</body>
+</html>

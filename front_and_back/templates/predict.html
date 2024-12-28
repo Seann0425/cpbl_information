@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Predict game outcomes and view detailed statistics.">
+  <link rel="stylesheet" href="../static/CSS/predict.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../static/CSS/navigationBar.css">
+  <link rel="stylesheet" href="../static/CSS/general.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
+						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+						rel="stylesheet">
+  <title>Predict</title>
+  <style>
+    #ops-explanation-table {
+      position: flex; /* 絕對定位 */
+      top: 300px; /* 距離頂部的固定位置 */
+      left: 20px; /* 距離左側的固定位置 */
+      width: 400px; /* 表格的固定寬度 */
+      text-align: center; /* 表格文字置中 */
+      border-collapse: collapse; /* 合併邊框 */
+    }
+
+    #ops-explanation-table th, #ops-explanation-table td {
+        border: 1px solid black; /* 表格邊框樣式 */
+        padding: 10px; /* 單元格內的填充 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navigationBar">
+    <a href="{{ url_for('home') }}">
+      <img class="CPBL-logo" src="../static/picture_repository/logo_new.png" alt="CPBL Logo">
+    </a>
+    <div class="navigationButtonList">
+      <div class="block">
+        <a class="playerLink" href="{{ url_for('allPlayers') }}">Player</a>
+        <div class="playerUnderLine"></div>
+      </div>
+      <div class="block">
+        <a class="scoreLink" href="{{ url_for('score') }}">Score</a>
+        <div class="scoreUnderLine"></div>
+      </div>
+      <div class="block">
+        <a class="winnerLink" href="{{ url_for('winnerlist') }}">Winlist</a>
+        <div class="winnerUnderLine"></div>
+      </div>
+      <div class="block">
+        <a class="predictlink" href="{{ url_for('predict') }}">Predict</a>
+        <div class="predictUnderLine"></div>
+      </div>
+    </div>
+    <div>
+        <a class="changeData" href="{{ url_for('insertplayer') }}">Edit</a>
+        <div class="insertLine"></div>
+      </div>
+  </div>
+
+<div style="display: flex">
+  <div class="user-input">
+    <h3>投打對決預測</h3>
+    <p>請注意: 輸入名子後請點選find, 會列出全部符合條件的球員</p>
+    <p>請點選你想要選擇的球員</p>
+    <p>跳出"您選擇了..."的字串才算成功選取</p>
+
+    <form>
+      <br><br>
+      <label for="pitcherName">Pitcher Name:</label>
+      <input type="text" id="pitcher-name" name="pitcher-name" placeholder="Enter Pitcher name" required>
+      <button type="button" onclick="checkpitch()">find</button>
+      <div id="selected-pitcher" style="display: none; margin-top: 10px; font-size: 18px; color: #12100e;"></div>
+      <br><br>
+
+      <label for="batterName">Batter Name:</label>
+      <input type="text" id="batter-name" name="batter-name" placeholder="Enter Batter name" required>
+      <button type="button" onclick="checkbatter()">find</button>
+      <div id="selected-batter" style="display: none; margin-top: 10px; font-size: 18px; color: #12100e;"></div>
+      <br><br>
+
+      <label class="inline-container" for="year-range-1">選擇年份區間:</label>
+      <select class="inline-container" id="year-range-1" name="year-range-1"></select>
+      <p class="inline-container">~</p>
+      <select class="inline-container" id="year-range-2" name="year-range-2"></select>
+      <p>使用公式:OPS+:100*[(球員上壘率/聯盟上壘率)+(球員長打率/聯盟長打率)-1]</p>
+      <button id="predict-button" type="button" onclick="showOutcome()">顯示對戰紀錄</button>
+      <button id="predict-button" type="button" onclick="predictOutcome()">Predict Outcome</button>
+    </form>
+    <div id="outcome" style="margin-top: 20px;"></div>
+    <div id="ops-explanation" style="margin-top: 20px; right:500px;"></div>
+      <table id="ops-explanation-table">
+        <thead>
+          <tr>
+            <th>OPS+值</th>
+            <th>解釋</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&gt;100</td>
+            <td>打者高機率會贏投手</td>
+          </tr>
+          <tr>
+            <td>~100</td>
+            <td>雙方勢均力敵</td>
+          </tr>
+          <tr>
+            <td>&lt;100</td>
+            <td>投手高機率會贏打者</td>
+          </tr>
+        </tbody>
+      </table>    
+    </div>
+  </div>
+
+  
+  <!-- 投手選項顯示區域 -->
+  <div id="pitcher-options" style="width: 50%; padding: 20px; border-left: 1px solid #ccc; overflow-y: auto;"></div>
+  <div id="batter-options" style="width: 50%; padding: 20px; border-left: 1px solid #ccc; overflow-y: auto;"></div>
+
+  <div id="prediction-result" style="display: none; margin-top: 20px;">
+    <h3>Prediction Result</h3>
+    <table id="result-table" border="1" style="width: 100%; text-align: center; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Player OBP</th>
+                <th>League OBP</th>
+                <th>Player SLG</th>
+                <th>League SLG</th>
+                <th>OPS+</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+  </div>
+</div>
+
+  <script src="../static/js/predict.js"></script>
+  <script> // 產生年份選擇區間器
+    function populateYearRange(selectId, startYear, endYear) {
+      const select = document.getElementById(selectId);
+      for (let year = startYear; year <= endYear; year++) {
+          const option = document.createElement('option');
+          option.value = year;
+          option.textContent = year;
+          select.appendChild(option);
+      }
+    }
+
+    // 對兩個選擇框調用函數
+    populateYearRange('year-range-1', 1990, 2024);
+    populateYearRange('year-range-2', 1990, 2024);
+  </script>
+  
+</body>
+</html>

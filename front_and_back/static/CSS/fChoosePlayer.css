@@ -1,0 +1,80 @@
+.no-scroll {
+    overflow: hidden; 
+}
+.disable-interaction {
+    pointer-events: none;
+}
+.practice {
+    pointer-events: auto; 
+}
+
+.practice{
+    width: 0px;
+    height: 0px;
+    background-color: black;
+    transition: width 0.25s ease, height 0.25s ease;
+    position: fixed;
+    z-index: 5;
+    opacity: 0.8;
+    top: 150px;
+    left: 300px;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.practiceSearch{
+    margin-top: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 20px;
+    font-family: "Roboto", "Serial";
+    border: none;
+    margin-bottom: 50px;
+}
+.practiceExit{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.practiceGrid{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px;
+    column-gap: 20px;
+    row-gap: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
+}
+.practiceButton{
+    height: 40px;
+    font-size: 20px;
+    font-family: "Roboto", "Serial";
+    border-radius: 5px;
+    border: none;
+}
+.practiceSearch{
+    width: 500px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+.practiceChoosePlayer{
+    position: absolute;
+    top:7px;
+    right: -10px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(79, 128, 0);
+    color: white;
+    transition: background-color 0.15s ease;
+}
+
+.practiceChoosePlayer:hover{
+    background-color: rgb(14, 106, 14);
+    cursor: pointer;
+}

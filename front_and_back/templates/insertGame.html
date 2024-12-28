@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Data</title>
+  
+    <link rel="stylesheet" href="../static/CSS/general.css">
+    <link rel="stylesheet" href="../static/CSS/navigationBar.css">
+    <link rel="stylesheet" href="../static/CSS/newForm.css">
+    <link rel="stylesheet" href="../static/CSS/fChoosePlayer.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
+						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+						rel="stylesheet">
+</head>
+
+<body id="body" style="padding-top:70px">
+	<div class="navigationBar">
+		<a href="{{ url_for('home') }}" target="_blank">
+			<img class="CPBL-logo" src="https://www.cpbl.com.tw/theme/common/images/project/logo_new.png">
+		</a>
+		<div class="navigationButtonList">
+			<div class="navigationButtonList">
+				<div class="block" id="navigationBarInsertBlock">
+					<a class="playerLink"  id="navigationBarInsert">Insert</a>
+					<div class="playerUnderLine"></div>
+				</div>
+				<div class="block" id="navigationBarUpdateBlock">
+					<a class="scoreLink"  id="navigationBarUpdate">Update</a>
+					<div class="scoreUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="winnerLink" href="{{ url_for('delete') }}">Delete</a>
+					<div class="winnerUnderLine"></div>
+				</div>
+			</div>
+		</div>
+        <div id="hoverNavigation">        
+        </div>
+        <div>
+            <a class="changeData" href="{{ url_for('player') }}">Home</a>
+            <div class="Home"></div>
+          </div>
+	
+	</div>
+	<style>
+       
+    </style>
+
+	<div class="formLocation">
+		<div class="formTitle">Insert game</div>
+
+        <div class="formInputBlock" id="game_date_block">
+            <input type="date" class="formInputContent" id="game_date" placeholder="">
+            <div class="formInputTag" id="game_date_tag">Date</div>
+            <div id="game_date-error-message" style="color: red; display: none; font-size: 15px;">請輸入比賽日期！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_teamA_block">
+            <input type="text" class="formInputContent" id="game_teamA" placeholder="">
+            <div class="formInputTag" id="game_teamA_tag">Home Team</div>
+            <div id="game_teamA-error-message" style="color: red; display: none; font-size: 15px;">請輸入主隊名稱！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_teamB_block">
+            <input type="text" class="formInputContent" id="game_teamB" placeholder="">
+            <div class="formInputTag" id="game_teamB_tag">Away Team</div>
+            <div id="game_teamB-error-message" style="color: red; display: none; font-size: 15px;">請輸入有效的客隊名稱或編號！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_scoreA_block">
+            <input type="number" class="formInputContent" id="game_scoreA" placeholder="">
+            <div class="formInputTag" id="game_scoreA_tag">Home Score</div>
+            <div id="game_scoreA-error-message" style="color: red; display: none; font-size: 15px;">請輸入主隊分數！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_scoreB_block">
+            <input type="number" class="formInputContent" id="game_scoreB" placeholder="">
+            <div class="formInputTag" id="game_scoreB_tag">Away Score</div>
+            <div id="game_scoreB-error-message" style="color: red; display: none; font-size: 15px;">請輸入客隊分數！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_hp_block">
+            <input type="text" class="formInputContent" id="game_hp" placeholder="">
+            <div class="formInputTag" id="game_hp_tag">HP</div>
+            <div id="game_hp-error-message" style="color: red; display: none; font-size: 15px;">請輸入 HP！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_1b_block">
+            <input type="text" class="formInputContent" id="game_1b" placeholder="">
+            <div class="formInputTag" id="game_1b_tag">1B</div>
+            <div id="game_1b-error-message" style="color: red; display: none; font-size: 15px;">請輸入 1B！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_2b_block">
+            <input type="text" class="formInputContent" id="game_2b" placeholder="">
+            <div class="formInputTag" id="game_2b_tag">2B</div>
+            <div id="game_2b-error-message" style="color: red; display: none; font-size: 15px;">請輸入 2B！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_3b_block">
+            <input type="text" class="formInputContent" id="game_3b" placeholder="">
+            <div class="formInputTag" id="game_3b_tag">3B</div>
+            <div id="game_3b-error-message" style="color: red; display: none; font-size: 15px;">請輸入 3B！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_audience_block">
+            <input type="text" class="formInputContent" id="game_audience" placeholder="">
+            <div class="formInputTag" id="game_audience_tag">Audience</div>
+            <div id="game_audience-error-message" style="color: red; display: none; font-size: 15px;">請輸入有效的觀眾數！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_times_block">
+            <input type="text" class="formInputContent" id="game_times" placeholder="">
+            <div class="formInputTag" id="game_times_tag">Consume Time</div>
+            <div id="game_times-error-message" style="color: red; display: none; font-size: 15px;">請輸入消耗時間！</div>
+        </div>
+
+        <div class="formInputBlock" id="game_mvp_block">
+            <input type="text" class="formInputContent" id="game_mvp" placeholder="">
+            <div class="formInputTag" id="game_mvp_tag">MVP</div>
+            <div id="game_mvp-error-message" style="color: red; display: none; font-size: 15px;">請輸入 MVP！</div>
+        </div>
+
+        <input type="submit" class="formInputSubmit" id="gameInsertButton">
+	</div>
+    <script src="../static/js/insertGame.js"></script>
+    <script src="../static/js/editModeNavigation.js"></script>
+</body>
+</html>

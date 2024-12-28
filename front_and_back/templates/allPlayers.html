@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Data</title>
+	<link rel="stylesheet" href="../static/CSS/general.css">
+	<link rel="stylesheet" href="../static/CSS/navigationBar.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,
+						400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+						rel="stylesheet">
+	<style>
+		.logo{
+			height: 240px;
+			transition: height 0.15s;
+		}
+		.logo:hover{
+			height: 250px;
+			cursor: pointer;
+			
+		}
+		.Info{
+			display:flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+
+			padding-right: 100px;
+		}
+		.player_grid{
+			display: grid;
+			grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+			column-gap: 10px;
+			row-gap: 15px;
+			overflow: hidden;
+		}
+
+		.playerButton{
+			
+			height: 20px;
+			font-size: 15px;
+			font-weight:lighter;
+			border-radius: 7px;
+			overflow: hidden;
+			border-color: rgb(210, 208, 208);
+			background-color: white;
+			transition: opacity 0.15s;
+			transition: background-color 0.15s;
+			
+		}
+		.playerButton:hover{
+			opacity: 0.6;
+			background-color: rgb(232, 232, 232);
+		}
+
+		.horizontal-line{
+			position:relative;
+			width: 100%;
+			height: 20px;
+			margin-bottom: 10px;
+			margin-top: 25px;
+		}
+		.horizontal-line:hover{
+			cursor: pointer;
+		}
+
+		.teamName{
+			position: absolute;
+			top: -30px;
+			left: 30px;
+			background-color: white;
+			padding: 10px;
+			font-size: 30px;
+			transition: font-size 0.3s;
+
+		}
+		.horizontal-line:hover .teamName{
+			font-size: 35px;
+		}
+
+		.horizontal{
+			position: relative;
+			top: 10px;
+			border: solid black 1px;
+			transition: border 0.15s;
+			transition: top 0.15s;
+		}
+		.horizontal-line:hover .horizontal{
+			border-width: 2px;
+			top: 5px;
+		}
+		
+	</style>
+</head>
+
+<body class="bodyPadding">
+	<div class="navigationBar">
+		<a href="{{ url_for('home') }}">
+			<img class="CPBL-logo" src="../static/picture_repository/logo_new.png" alt="CPBL Logo">
+		</a>
+		<div class="navigationButtonList">
+			<div class="navigationButtonList">
+				<div class="block">
+					<a class="playerLink" href="{{ url_for('allPlayers') }}">Player</a>
+					<div class="playerUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="scoreLink" href="{{ url_for('score') }}">Score</a>
+					<div class="scoreUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="winnerLink" href="{{ url_for('winnerlist') }}">Winlist</a>
+					<div class="winnerUnderLine"></div>
+				</div>
+				<div class="block">
+					<a class="predictLink" href="{{ url_for('predict') }}">Predict</a>
+					<div class="predictUnderLine"></div>
+				</div>
+			</div>
+		</div>
+		<a class="changeData" href="{{ url_for('insertplayer') }}">Edit</a>
+	</div>
+
+
+	<div id="allTeams">
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">兄弟</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/brotherelephant.jpg">
+				<div class="player_grid" id="brotherelephant">
+					
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">中信鯨</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/whale.jpg">
+				<div class="player_grid" id="whale">
+					
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">三商虎</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/tiger.png">
+				<div class="player_grid" id="tiger">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">統一7-ELEVEn獅</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/team_logo_lions_500x500.png">
+				<div class="player_grid" id="team_logo_lions_500x500">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">味全龍</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/dragon.png">
+				<div class="player_grid" id="dragon">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">俊國熊</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/bear.png">
+				<div class="player_grid" id="bear">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">時報鷹</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/eagle.jpg">
+				<div class="player_grid" id="eagle">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">興農牛</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/ox.png">
+				<div class="player_grid" id="ox">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">第一金剛</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/kingkon.jpg">
+				<div class="player_grid" id="kingkon">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">誠泰</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/snake.png">
+				<div class="player_grid" id="snake">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">Lamigo</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Lamigo.jpg">
+				<div class="player_grid" id="Lamigo">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">米迪亞</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Dmedia.jpg">
+				<div class="player_grid" id="Dmedia">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">義大犀牛</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/rhino.jpg">
+				<div class="player_grid" id="rhino">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">中信兄弟</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/brother.png">
+				<div class="player_grid" id="brother">
+				</div>
+			</div>
+		</div>
+		<div class="team" >
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">富邦悍將</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Fubon_Guardians.png">
+				<div class="player_grid" id="Fubon_Guardians">
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">樂天桃猿</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/Rakuten_Monkeys.png">
+				<div class="player_grid" id="Rakuten_Monkeys">
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">台鋼雄鷹</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/TsgHawks.png">
+				<div class="player_grid" id="TsgHawks">
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			<div class="horizontal-line">
+				<hr class="horizontal">
+				<h1 class="teamName">其他</h1>
+			</div>
+			<div class="Info">
+				<img class="logo" src="../static/picture_repository/baseball.jpg">
+				<div class="player_grid" id="baseball">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../static/js/allPlayersRequest.js"></script>
+</body>
+</html>
+<!--
+ 兄弟、兄弟二軍(brotherelephant.jpg)
+ 中信、中信二軍(whale.jpg)
+ 三商(tiger.png)
+ 統一7-ELEVEn獅、統一7-ELEVEn獅二軍(team_logo_lions_500x500.png)
+ 味全龍、味全龍二軍(dragon.png)
+ 俊國(bear.png)
+ 時報(eagle.jpg)
+ 興農、興農二軍(ox.png)
+ 第一(kingkon.jpg)
+ 誠泰(snake.png)
+ Lamigo、Lamigo二軍(Lamigo.jpg)
+ 米迪亞(Dmedia.jpg)
+ 義大、義大二軍(rhino.jpg)
+ 中信兄弟、中信兄弟二軍(brother.png)
+ 富邦悍將、富邦悍將二軍(Fubon_Guardians.png)
+ 樂天桃猿、樂天桃猿二軍(Rakuten_Monkeys.png)
+ 台鋼雄鷹、台鋼雄鷹二軍(TsgHawks.png)
+ 其他(baseball.jpg)
+-->
