@@ -15,16 +15,10 @@ Final Project of DBMS
 ### 已完成:
 Player / Winlist / Delete / Score /Predict / Update
 
-### 等待對接: （ route_test.py 成功 但 route.py 還沒試）
-player顯示(預計根據隊伍顯示)
-
-### 未完成:
-player顯示(預計根據隊伍顯示)
-
 # 前端
 .css .js放在 static 裡
 .html (網頁）放在 templates
 
 # 後端
 route.py / app.py / model.py / run.py / requirements.txt 是最主要的後端程式
-route_test是曾另外編輯的 是為了測試特定功能而架的後端 僅有特地功能
+route_test是另外編輯的 是為了測試特定功能而架的後端 僅有特地功能
