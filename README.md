@@ -22,11 +22,3 @@
 * 透過Scrapy、Selenium、Playewright框架完成爬蟲
 * ER Model：
 ![image](https://hackmd.io/_uploads/S1ZJaKTrkl.png)
-
-
-## 分工表
-| 分工     | 負責           |
-| -------- | -------------- |
-| 資料準備 | 余逸翔、林冠成 |
-| 前端     | 楊淯棋、曾子堤 |
-| 後端     | 張盛瑋         |
